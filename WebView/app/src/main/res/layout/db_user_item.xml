@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#333333"
+    android:paddingTop="2dp">
+    <TextView
+        android:id="@+id/db_item_name"
+        android:padding="2dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/btnText"/>
+    <TextView
+        android:id="@+id/db_item_sex"
+        android:padding="2dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/btnText" />
+    <TextView
+        android:id="@+id/db_item_age"
+        android:padding="2dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/btnText" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/edit_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="编辑"
+            android:textColor="@color/colorPrimary"
+            android:background="@color/btnText"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/remove_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="删除"
+            android:textColor="@color/colorPrimary"
+            android:background="@color/btnText"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</LinearLayout>
