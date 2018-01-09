@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         />
 
-    <TextViewa
+    <TextView
         android:id="@+id/fruit_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

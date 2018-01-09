@@ -28,13 +28,12 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Fruit fruit = getItem(position); //获得当前的 Fruit 实例
-
-        View view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
-        ImageView fruitImage = (ImageView) view.findViewById(R.id.fruit_image);
-        TextView fruitName = (TextView) view.findViewById(R.id.fruit_name);
-        fruitImage.setImageResource(fruit.getImageId());
-        fruitName.setText(fruit.getName());
-        return  view;
+         Fruit fruit = getItem(position);
+         View view = LayoutInflater.from(this.getContext()).inflate(resourceId,parent,false);
+         ImageView fruitImage = view.findViewById(R.id.fruit_image);
+         TextView fruitName = view.findViewById(R.id.fruit_name);
+         fruitImage.setImageResource(fruit.getImageId());
+         fruitName.setText(fruit.getName());
+         return  view;
     }
 }
