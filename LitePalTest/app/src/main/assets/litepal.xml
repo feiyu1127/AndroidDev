@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+    <dbname value="BookStore"></dbname>
+    <version value="2"></version>
+    <list>
+        <mapping class="com.example.admin.litepaltest.Book"></mapping> <!-- mapping 标签声明要配置的映射模型类 -->
+        <mapping class="com.example.admin.litepaltest.Category"></mapping>
+    </list>
+</litepal>
