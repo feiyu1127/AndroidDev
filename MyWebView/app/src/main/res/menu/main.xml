@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/access_baidu"
+        android:title="进入百度"
+        />
+    <item
+        android:id="@+id/tel_10086"
+        android:title="拨打10086"
+        />
+
+</menu>
