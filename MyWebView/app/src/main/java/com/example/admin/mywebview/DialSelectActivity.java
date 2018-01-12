@@ -27,7 +27,7 @@ public class DialSelectActivity extends AppCompatActivity implements View.OnClic
 
                 break;
             case R.id.direct_btn: // 直接拨号
-                
+
                 break;
             default:
                 break;
