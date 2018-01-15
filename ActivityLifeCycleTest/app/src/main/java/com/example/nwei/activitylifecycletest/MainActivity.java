@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: ");
         setContentView(R.layout.activity_main);
 
-        if(savedInstanceState != null){
+        if(savedInstanceState != null){ //活动被回收时有调用 onSaveInstanceState() 方法报错数据,如果没有,savedInstanceState 为 null 值
             String tempData = savedInstanceState.getString("data_key");
             Log.d(TAG, tempData);
         }
@@ -43,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * 活动呗回收时保存参数
+     * @param outState
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

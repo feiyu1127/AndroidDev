@@ -30,7 +30,8 @@ public class SecondActivity extends  BaseActivity {
 //                setResult(RESULT_OK,intent);
 //                finish();
 
-                    Intent intent = new Intent(SecondActivity.this,ThirdActivity.class);
+//                    Intent intent = new Intent(SecondActivity.this,ThirdActivity.class);
+                    Intent intent = new Intent(SecondActivity.this,FirstActivity.class);
                     startActivity(intent);
 
             }

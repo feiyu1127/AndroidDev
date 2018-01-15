@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".DialActivity"
-            android:label="给你还记得电话的朋友打个电话吧.." />
+            />
         <activity
             android:name=".RobotChatActivity"
             android:label="机器人聊天室" />
