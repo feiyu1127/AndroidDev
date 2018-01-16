@@ -2,9 +2,11 @@ package com.example.admin.mywebview;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,24 +18,38 @@ public class BaseActivity extends AppCompatActivity {
 
     private static final String TAG = "BaseActivity";
 
-    private static final String DIALACTIVITY = "DialActivity"; //打电话活动
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.title);
+        Log.d("当前活动是", getClass().getSimpleName());
 
-        Log.d(TAG, getClass().getSimpleName());
-        switch (getClass().getSimpleName()){ //获取当前是哪一个活动
-            case DIALACTIVITY:
-                Log.d(TAG, "修改文字");
-                TextView titleText = findViewById(R.id.title_text);
-                titleText.setText("电话亭");
-                break;
-            default:
-                break;
+        //将系统自带的标题栏隐藏
+//        ActionBar actionBar = getSupportActionBar();
+//        if(actionBar != null){
+//            actionBar.hide();
+//        }
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //将活动添加到活动管理器
+        ActivityCollector.addActivity(this);
+
+    }
+
+
+    protected void setTitleText(String title){
+        View rootView = ((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
+        ViewGroup viewGroup = ((ViewGroup)rootView);
+        for(int i=0;i<viewGroup.getChildCount();i++){
+            View view = viewGroup.getChildAt(i);
+            if(view instanceof TitleLayout){
+                TitleLayout header = (TitleLayout) view;
+                header.setTitleText(title);
+            }
         }
     }
+
+
 }

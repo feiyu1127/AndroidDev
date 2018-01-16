@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,14 +18,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ActivityCollector.addActivity(this);
-
-        //将系统自带的标题栏隐藏
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
-            actionBar.hide();
-        }
 
         Button customBtn = findViewById(R.id.custom_dial);
         Button robotChatBtn = findViewById(R.id.robot_chat_btn);
@@ -64,7 +57,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         return true;
     }
 
-    @Override //点击菜单按钮方法
+
+    /**
+     * 点击菜单按钮方法
+     * @param item
+     * @return
+     */
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.access_baidu:
@@ -77,6 +76,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 Intent intentDial = new Intent(Intent.ACTION_DIAL);
                 intentDial.setData(Uri.parse("tel:10086"));
                 startActivity(intentDial);
+                break;
+            case R.id.exit_sys:
+                ActivityCollector.finishAll();
                 break;
             default:
                 break;

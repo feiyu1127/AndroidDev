@@ -19,13 +19,7 @@ public class DialActivity extends BaseActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dial_layout);
 
-        //将系统自带的标题栏隐藏
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
-            actionBar.hide();
-        }
-
-        ActivityCollector.addActivity(this);
+        setTitleText("电话亭");
 
         Button dialBtn = findViewById(R.id.dial_button);
         dialPhone = findViewById(R.id.dial_phone);

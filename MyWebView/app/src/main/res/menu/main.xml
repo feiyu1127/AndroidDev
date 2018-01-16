@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
     <item
         android:id="@+id/access_baidu"
         android:title="进入百度"
+        app:showAsAction="never"
         />
     <item
         android:id="@+id/tel_10086"
         android:title="拨打10086"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/exit_sys"
+        android:icon="@drawable/ic_exit_sys"
+        android:title="退出"
+        app:showAsAction="always"
         />
 
 </menu>
