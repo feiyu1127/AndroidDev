@@ -16,12 +16,8 @@ import okhttp3.Response;
  */
 
 public class HttpUtil {
-//    private static String HOST = "https://chufang-api.victtech.com/api/v1/";
-    private static String HOST = "https://chufang-api.victtech.com/api/v1/";
 
-    public HttpUtil(String host){
-        this.HOST = host;
-    }
+    private static String HOST = "https://chufang-api.victtech.com/api/v1/";
 
     public static void getRequest(final String address, final HttpCallBackLisioner callBackLisioner){
         new Thread(new Runnable() {

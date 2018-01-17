@@ -17,4 +17,10 @@
         app:showAsAction="always"
         />
 
+    <item
+        android:id="@+id/add_user"
+        android:title="添加用户"
+        app:showAsAction="never"
+        />
+
 </menu>

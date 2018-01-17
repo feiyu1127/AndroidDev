@@ -16,10 +16,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.admin.chufang.entity.ErrorModel;
+import com.example.admin.chufang.entity.LoginEntity;
+import com.example.admin.chufang.entity.LoginModel;
+import com.example.admin.chufang.gson.ParseJson;
+import com.example.admin.chufang.httpRequest.HttpCallBackLisioner;
+import com.example.admin.chufang.httpRequest.HttpUtil;
+
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -29,6 +41,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private static final String TAG = "MainActivity";
     private DrawerLayout mDrawerLayout;
     private EditText loginUserName;
     private EditText loginPassword;
@@ -98,38 +111,73 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.login_btn: //用户登录
                   String telephone = loginUserName.getText().toString();
                   String password = loginPassword.getText().toString();
+
                   if(telephone == null || password == null || telephone.isEmpty() || password.isEmpty()){
                         Toast.makeText(this,"用户名或密码不能为空",Toast.LENGTH_SHORT).show();
                         break;
                   }
 
-                OkHttpClient client = new OkHttpClient();
-                RequestBody requestBody = new FormBody.Builder()
-                        .add("telephone",telephone)
-                        .add("password",password)
-                        .build();
-                Request request = new Request.Builder()
-                        .url("https://chufang-api.victtech.com/api/v1/login")
-                        .post(requestBody)
-                        .build();
-                Response response = null;
-                try {
-                    response = client.newCall(request).execute();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                String responseData = "";
-                try {
-                    responseData = response.body().string();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                  Map<String,String> loginData = new HashMap<>();
+                  loginData.put("telephone",telephone);
+                  loginData.put("password",password);
 
-                Log.d("结果", responseData);
+                  HttpUtil.postRequest("login", new HttpCallBackLisioner() {
+                      @Override
+                      public void onFinish(String requestString) {
+                          showJsonResponse(requestString);
+                      }
+
+                      @Override
+                      public void onError(Exception e) {
+                            Toast.makeText(MainActivity.this,"网络错误",Toast.LENGTH_SHORT).show();
+                      }
+                  },loginData);
                 break;
             default:
                 break;
         }
+    }
+
+
+    private void showJsonResponse(final String jsonResponse){
+        try {
+            Object baseModel = ParseJson.parseJson(jsonResponse, LoginModel.class);
+
+            if(baseModel instanceof ErrorModel){ //判断左边的对象是不是右边类的实体
+                ErrorModel errorModel = (ErrorModel) baseModel;
+                showToastInThread(errorModel.getMessage());
+
+            }else{
+                LoginModel loginModel = (LoginModel) baseModel;
+                final LoginEntity loginEntity = loginModel.getData();
+
+                //修改 header 导航的显示信息
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView username = findViewById(R.id.username);
+                        TextView mail = findViewById(R.id.mail);
+                        username.setText(loginEntity.getName());
+                        mail.setText(loginEntity.getTelephone());
+                    }
+                });
+
+                Log.d(TAG, "登录成功" + loginEntity.getName());
+            }
+        } catch (JSONException e) {
+            showToastInThread("返回解析json错误");
+        }
+
+    }
+
+
+    private void showToastInThread(final String msgToast){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(MainActivity.this,msgToast,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -152,6 +200,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
+                break;
+            case R.id.add_user:
+                Intent addUserIntent = new Intent(MainActivity.this,AddUserActivity.class);
+                startActivity(addUserIntent);
                 break;
             default:
                 break;

@@ -39,6 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/text_view_username"
+                android:maxLength="11"
+                android:inputType="number"
                 android:layout_marginTop="60dp"
                 />
 
@@ -55,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/text_view_password"
+                android:inputType="textPassword"
                 android:layout_marginTop="100dp"
                 />
 
