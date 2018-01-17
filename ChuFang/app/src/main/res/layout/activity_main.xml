@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/admin"
+        android:background="@drawable/admin2"
         >
 
         <android.support.v7.widget.Toolbar
@@ -67,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="180dp"
                 android:text="确定"
+                android:background="@xml/btn_radius"
                 />
         </RelativeLayout>
 
