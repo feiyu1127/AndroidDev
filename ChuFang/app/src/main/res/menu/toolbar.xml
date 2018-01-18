@@ -12,14 +12,7 @@
 
     <item
         android:id="@+id/exit_sys"
-        android:icon="@drawable/ic_exit_sys"
         android:title="退出"
-        app:showAsAction="always"
-        />
-
-    <item
-        android:id="@+id/add_user"
-        android:title="添加用户"
         app:showAsAction="never"
         />
 

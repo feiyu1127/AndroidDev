@@ -7,72 +7,48 @@
     android:layout_height="match_parent"
     >
 
-    <FrameLayout
+    <!--<FrameLayout-->
+        <!--android:id="@+id/toolbar_block"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#FFFFFF"-->
+        <!--&gt;-->
+
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:background="?attr/colorPrimary"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+            <!--/>-->
+
+    <!--</FrameLayout>-->
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/admin2"
+        android:orientation="vertical"
+        android:layout_marginTop="?attr/actionBarSize"
         >
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tl_tab"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabSelectedTextColor="@color/colorAccent"
             />
 
-        <RelativeLayout
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <TextView
-                android:id="@+id/text_view_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:text="登录名"
-                />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
 
-            <EditText
-                android:id="@+id/login_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/text_view_username"
-                android:maxLength="11"
-                android:inputType="number"
-                android:layout_marginTop="60dp"
-                />
-
-            <TextView
-                android:id="@+id/text_view_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:text="密码"
-                />
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/text_view_password"
-                android:inputType="textPassword"
-                android:layout_marginTop="100dp"
-                />
-
-            <Button
-                android:id="@+id/login_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="180dp"
-                android:text="确定"
-                android:background="@xml/btn_radius"
-                />
-        </RelativeLayout>
-
-
-    </FrameLayout>
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

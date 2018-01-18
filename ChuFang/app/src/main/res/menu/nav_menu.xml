@@ -4,33 +4,21 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/user_list"
+            android:id="@+id/recipe_transform"
             android:icon="@drawable/nav_call"
-            android:title="用户管理"
+            android:title="处方转化"
             />
 
         <item
-            android:id="@+id/nav_friends"
+            android:id="@+id/drugstore_manage"
             android:icon="@drawable/nav_firends"
             android:title="药店管理"
             />
 
         <item
-            android:id="@+id/nav_location"
+            android:id="@+id/user_manage"
             android:icon="@drawable/nav_location"
-            android:title="处方转化"
-            />
-
-        <item
-            android:id="@+id/mav_mail"
-            android:icon="@drawable/nav_mail"
-            android:title="Mail"
-            />
-
-        <item
-            android:id="@+id/nav_task"
-            android:icon="@drawable/nav_task"
-            android:title="Tasks"
+            android:title="用户管理"
             />
 
     </group>
