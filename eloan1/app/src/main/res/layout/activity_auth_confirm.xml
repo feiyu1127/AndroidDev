@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2ede9"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bar"
+        android:gravity="center" >
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户注册"
+            android:textColor="#595959"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip" >
+
+        <Button
+            android:id="@+id/bt_left_a"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:background="@drawable/register_left_a"
+            android:text="填写注册信息"
+            android:textColor="#595959"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/bt_right_a"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/bt_left_a"
+            android:layout_weight="10"
+            android:background="@drawable/register_right_b"
+            android:text="确认手机号码"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/comm_input_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="短信验证码:"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:textColor="#595959"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_vertify_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_weight="20"
+            android:background="@null"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:paddingLeft="10dip"
+            android:singleLine="true"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/retget_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="@drawable/reget_vertivfy"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/bt_retget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dip"
+                android:paddingBottom="10dip"
+                android:text="发送验证码"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="25dip"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/bt_commitregister"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_bt"
+            android:text="确认注册"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

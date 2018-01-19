@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_five"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#dadce0"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/back5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Mini循环消费贷"
+            android:textColor="#595959"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/risk_prompt_loan_rl_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="#61cbe4"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/head"
+                style="@style/head_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="联系人信息" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/contact_info_easy_rl_body"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#f7f8f9" />
+
+        <ScrollView
+            android:id="@+id/ScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:scrollbars="none" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp" >
+
+                <!-- 联系人姓名 -->
+
+                <LinearLayout
+                    android:id="@+id/contact_name_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/comm_must_fill_term"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/contact_name_text"
+                        style="@style/input_style_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="直系亲属联系人姓名：" />
+
+                    <EditText
+                        android:id="@+id/edit_contact_name_value"
+                        style="@style/editText_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:focusableInTouchMode="true"
+                        android:hint="请输入直系亲属姓名" />
+                </LinearLayout>
+
+                <!-- 工作单位名称 -->
+
+                <LinearLayout
+                    android:id="@+id/contact_work_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/contact_name_ll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/contact_work_name_t"
+                        style="@style/input_style_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="直系亲属工作单位名称：" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/nowadd_dp_name_text_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/contact_work_name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/comm_must_fill_term"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edit_contact_work_name_val"
+                        style="@style/editText_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:background="@android:color/transparent"
+                        android:hint="请输入工作单位名称" />
+                </LinearLayout>
+
+                <!-- 与申请人关系 -->
+
+                <LinearLayout
+                    android:id="@+id/contact_relation_text_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/nowadd_dp_name_text_ll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/contact_relation_text"
+                        style="@style/input_style_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="与申请人关系"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/contact_relation_group1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/comm_spinner_selecter"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+                <!-- 住宅电话 -->
+
+                <LinearLayout
+                    android:id="@+id/home_phone_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/contact_relation_text_ll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/comm_input_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/input_style_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="住宅电话：" />
+
+                    <EditText
+                        android:id="@+id/edit_phone_no_value1"
+                        style="@style/editText_style"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="区号"
+                        android:maxLength="4"
+                        android:numeric="integer"
+                        android:paddingLeft="5dp" />
+
+                    <TextView
+                        style="@style/input_style_other_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="—" />
+
+                    <EditText
+                        android:id="@+id/edit_phone_no_value2"
+                        style="@style/editText_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="电话号码"
+                        android:maxLength="8"
+                        android:numeric="integer"
+                        android:paddingLeft="5dp" />
+                </LinearLayout>
+
+                <!-- 手机号码 -->
+
+                <LinearLayout
+                    android:id="@+id/mobile_no_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/home_phone_ll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/comm_must_fill_term"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/mobile_no_text"
+                        style="@style/input_style_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="@string/mobile_no" />
+
+                    <EditText
+                        android:id="@+id/edit_mobile_no_value1"
+                        style="@style/editText_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="请输入手机号码"
+                        android:maxLength="11"
+                        android:numeric="integer"
+                        android:paddingLeft="5dp" />
+                </LinearLayout>
+
+                <!-- *****************************************第二个联系人信息****************************************** -->
+                <!-- 联系人姓名 2 -->
+
+                <RelativeLayout
+                    android:id="@+id/mobile_no1_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobile_no_ll"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/list_line" />
+
+                    <LinearLayout
+                        android:id="@+id/contact_name2_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_name_text2"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="直系亲属联系人姓名：" />
+
+                        <EditText
+                            android:id="@+id/edit_contact_name_value2"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入姓名" />
+                    </LinearLayout>
+                    <!-- 工作单位 -->
+
+
+                    <!--
+                    <LinearLayout
+                        android:id="@+id/contact_work_name2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_name2_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_work_name_t2"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="非亲属工作单位名称：" />
+
+                        <EditText
+                            android:id="@+id/edit_contact_work_name_val2"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入工作单位名称" />
+                    </LinearLayout>
+                    -->
+
+
+                    <!-- 工作单位名称 -->
+
+                    <LinearLayout
+                        android:id="@+id/contact_work_name2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_name2_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_work_name_t2"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="直系亲属工作单位名称：" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/nowadd_dp_name_text_ll2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_work_name2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edit_contact_work_name_val2"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="18dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入工作单位名称" />
+                    </LinearLayout>
+
+                    <!-- 与申请人关系2 -->
+
+                    <LinearLayout
+                        android:id="@+id/contact_relation_text2_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/nowadd_dp_name_text_ll2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_relation_text2"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="与申请人关系"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/contact_relation_group2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/comm_spinner_selecter"
+                            android:paddingLeft="10dp" />
+                    </LinearLayout>
+
+                    <!-- 住宅电话2 -->
+
+                    <LinearLayout
+                        android:id="@+id/home_phone2_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_relation_text2_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="住宅电话：" />
+
+                        <EditText
+                            android:id="@+id/edit_phone_no_value3"
+                            style="@style/editText_style"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="区号"
+                            android:maxLength="4"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+
+                        <TextView
+                            style="@style/input_style_other_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="—" />
+
+                        <EditText
+                            android:id="@+id/edit_phone_no_value4"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="电话号码"
+                            android:maxLength="8"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+                    </LinearLayout>
+
+                    <!-- 手机号码 -->
+
+                    <LinearLayout
+                        android:id="@+id/mobile_no2_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/home_phone2_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/mobile_no_text2"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="@string/mobile_no" />
+
+                        <EditText
+                            android:id="@+id/edit_mobile_no_value2"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入手机号"
+                            android:maxLength="11"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- *****************************************第三个联系人信息****************************************** -->
+                <!-- 联系人姓名 3 -->
+
+                <RelativeLayout
+                    android:id="@+id/mobile_no3_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobile_no1_ll"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/list_line" />
+
+                    <LinearLayout
+                        android:id="@+id/contact_name3_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_name_text3"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="第三联系人姓名：" />
+
+                        <EditText
+                            android:id="@+id/edit_contact_name_value3"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入姓名" />
+                    </LinearLayout>
+
+                    <!-- 工作单位名称2 -->
+
+
+                    <!--
+                    <LinearLayout
+                        android:id="@+id/contact_work_name3_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_name3_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_work_name_text3"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="第三联系人工作单位名称：" />
+
+                        <EditText
+                            android:id="@+id/edit_contact_work_name_value3"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入工作单位名称" />
+                    </LinearLayout>
+                    -->
+
+
+                    <!-- 工作单位名称 -->
+
+                    <LinearLayout
+                        android:id="@+id/contact_work_name3_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_name3_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_work_name_text3"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="第三联系人工作单位名称：" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/nowadd_dp_name_text_ll3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_work_name3_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edit_contact_work_name_value3"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="18dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入工作单位名称" />
+                    </LinearLayout>
+
+                    <!-- 与申请人关系2 -->
+
+                    <LinearLayout
+                        android:id="@+id/contact_relation_text3_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/nowadd_dp_name_text_ll3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_relation_text3"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="与申请人工作关系"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/contact_relation_group3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/comm_spinner_selecter"
+                            android:paddingLeft="10dp" />
+                    </LinearLayout>
+
+                    <!-- 住宅电话2 -->
+
+                    <LinearLayout
+                        android:id="@+id/home_phone3_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_relation_text3_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="住宅电话：" />
+
+                        <EditText
+                            android:id="@+id/edit_phone_no_value5"
+                            style="@style/editText_style"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="区号"
+                            android:maxLength="4"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+
+                        <TextView
+                            style="@style/input_style_other_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="—" />
+
+                        <EditText
+                            android:id="@+id/edit_phone_no_value6"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="电话"
+                            android:maxLength="8"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+                    </LinearLayout>
+
+                    <!-- 手机号码 -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/home_phone3_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/mobile_no_text3"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="@string/mobile_no" />
+
+                        <EditText
+                            android:id="@+id/edit_mobile_no_value3"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入手机号"
+                            android:maxLength="11"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- *****************************************第四个联系人信息****************************************** -->
+                <!-- 联系人姓名 4 -->
+
+                <RelativeLayout
+                    android:id="@+id/mobile_no4_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobile_no3_ll"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/list_line" />
+
+                    <LinearLayout
+                        android:id="@+id/contact_name4_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_name_text4"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="第四联系人姓名：" />
+
+                        <EditText
+                            android:id="@+id/edit_contact_name_value4"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入姓名" />
+                    </LinearLayout>
+
+                    <!-- 工作单位名称2 -->
+                    <!--
+                    <LinearLayout
+                        android:id="@+id/contact_work_name4_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_name4_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_work_name_text4"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="第四联系人工作单位名称：" />
+
+                        <EditText
+                            android:id="@+id/edit_contact_work_name_value4"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入工作单位名称" />
+                    </LinearLayout>
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/contact_work_name4_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_name4_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_work_name_text4"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="第四联系人工作单位名称：" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/nowadd_dp_name_text_ll4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_work_name4_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edit_contact_work_name_value4"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="18dp"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入工作单位名称" />
+                    </LinearLayout>
+
+                    <!-- 与申请人关系2 -->
+
+                    <LinearLayout
+                        android:id="@+id/contact_relation_text4_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/nowadd_dp_name_text_ll4"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/contact_relation_text4"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="与申请人工作关系"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/contact_relation_group4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/comm_spinner_selecter"
+                            android:paddingLeft="10dp" />
+                    </LinearLayout>
+
+                    <!-- 住宅电话2 -->
+
+                    <LinearLayout
+                        android:id="@+id/home_phone4_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/contact_relation_text4_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="住宅电话：" />
+
+                        <EditText
+                            android:id="@+id/edit_phone_no_value7"
+                            style="@style/editText_style"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="区号"
+                            android:maxLength="4"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+
+                        <TextView
+                            style="@style/input_style_other_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="—" />
+
+                        <EditText
+                            android:id="@+id/edit_phone_no_value8"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="电话号码"
+                            android:maxLength="8"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+                    </LinearLayout>
+
+                    <!-- 手机号码 -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/home_phone4_ll"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/comm_must_fill_term"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/mobile_no_text4"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="@string/mobile_no" />
+
+                        <EditText
+                            android:id="@+id/edit_mobile_no_value4"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入手机号码"
+                            android:maxLength="11"
+                            android:numeric="integer"
+                            android:paddingLeft="5dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/addperson_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobile_no4_ll"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/add_person"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/mini_loan_Contacts_info_next_button"
+                    style="@style/next_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/addperson_Button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_next_selector"
+                    android:gravity="center_horizontal|center"
+                    android:text="下一步" />
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

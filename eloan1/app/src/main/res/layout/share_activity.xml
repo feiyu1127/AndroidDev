@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+	
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/topbg"
+	    >
+	    <ImageView 
+	        android:id="@+id/back"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:background="@drawable/back_selector"
+	        />
+	    <TextView 
+	        android:id="@+id/tx1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_centerVertical="true"
+	        android:textColor="@color/headcolor"
+	        android:text="分享"
+	        android:textSize="@dimen/head_textsize"
+	        />
+	    
+	</RelativeLayout>
+    
+	
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/aboutus_top"
+	    android:layout_marginLeft="@dimen/home_margin"
+	    android:layout_marginRight="@dimen/home_margin"
+	    >
+
+	    <TextView
+	        android:id="@+id/version"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="250dp"
+	        android:textSize="15sp" />
+	</RelativeLayout>
+		    <Button 
+		    android:id="@+id/btshare"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="分享"
+	        />
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    >
+	    
+	    
+	</LinearLayout>
+</LinearLayout>

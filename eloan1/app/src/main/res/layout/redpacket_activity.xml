@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b2f7bc"   
+    android:orientation="vertical" >
+    
+ <ImageView 
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:background="@drawable/huodong_titlt"
+     /> 
+     
+ 
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+           >
+           <RelativeLayout
+              android:id="@+id/ly_kaijiang"
+      		  android:layout_centerInParent="true"
+    		  android:layout_width="320dp"
+      	      android:layout_height="115dp" 
+      	      android:visibility="gone"
+      	      android:layout_marginBottom="18dp"
+              android:orientation="horizontal"
+              android:gravity="center_horizontal"
+              android:background="@drawable/guakai_beijing"
+                >
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="12dp"
+                    android:layout_alignParentBottom="true"
+                   android:orientation="horizontal" >
+
+                   <Button
+                       android:id="@+id/bt_next"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/guakai_shiyong_selector" />
+                   <Button
+                       android:id="@+id/a1"
+                       android:layout_width="5dp"
+                       android:layout_height="wrap_content"
+                      android:visibility="invisible" />
+                   <Button
+                       android:id="@+id/bt_share"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/guakai_fenxiang_seletor" />
+               </LinearLayout>
+
+           </RelativeLayout>
+
+    <com.yucheng.byxf.mini.ui.GuaGuaKa
+        android:id="@+id/guaugaview"
+        android:layout_centerInParent="true"
+        android:layout_width="320dp"
+        android:layout_height="115dp" 
+          android:layout_marginBottom="18dp"
+        android:background="@color/white"
+        />
+<ImageView 
+    android:id="@+id/iv_info"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:background="@drawable/huodong_info"
+     android:layout_marginBottom="35dp"
+     /> 
+   
+        </LinearLayout>
+        
+    </RelativeLayout>
+   
+</LinearLayout>

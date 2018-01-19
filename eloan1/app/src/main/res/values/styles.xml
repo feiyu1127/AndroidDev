@@ -1,0 +1,200 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="title_style">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/title</item>
+        <item name="android:textColor">#595959</item>
+    </style>
+
+    <!-- 贷款下一步按钮 -->
+    <style name="next_button_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- 申请框内值 -->
+    <style name="input_value_style">
+        <item name="android:dividerHeight">20sp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3F3F3F</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+    <!-- 申请框内标题 -->
+    <style name="title_left_style">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#e70700</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <!-- 自定义progress dialog -->
+    <style name="progress_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- <item name="android:windowBackground">@null</item> -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- 申请输入框标题文字样式 -->
+    <style name="input_style">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#4f4d4d</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="android:style/Theme.Dialog">
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <!-- head info -->
+    <style name="head_info">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <!-- 基本信息其他项 -->
+    <style name="input_style_other">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#595959</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="button_value">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#4f4d4d</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <!-- editText -->
+    <style name="editText_style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#3f3f3f</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:background">@null</item>
+    </style>
+    <!-- editText -->
+    <style name="editText_style2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#104E8B</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="input_style_other_text">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#73463f</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <!-- next -->
+    <style name="next_style">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 风险内容文字 -->
+    <style name="fengxian_neirong_text">
+        <item name="android:textSize">18px</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- 退货单文字 -->
+    <style name="goods_rejected_text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:text">点击拍摄退货单</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- 对话框样式 -->
+    <!-- 去除Dialog边框 -->
+    <style name="myDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/Transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- checkbox -->
+    <style name="isCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/ischeck_selected</item>
+    </style>
+
+    <style name="chat_text_date_style">
+        <item name="android:padding">2dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">#bfbfbf</item>
+    </style>
+
+    <style name="chat_content_date_style">
+        <item name="android:minHeight">50dp</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:textColor">#646464</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">#bfbfbf</item>
+    </style>
+
+    <style name="big_item_input_style_other_1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#030303</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="chat_text_name_style">
+        <item name="android:textColor">#818181</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="my_edittext_style" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/my_edittext</item>
+    </style>
+
+
+
+</resources>

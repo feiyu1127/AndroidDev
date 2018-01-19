@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2ede6"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/general_consume_loan_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="贷款意向"
+            android:textColor="@color/headcolor"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tx1"
+        android:layout_below="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#61cbe4"
+        android:gravity="center"
+        android:padding="5dip"
+        android:text="请您填写贷款意向信息"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:layout_below="@+id/tx1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:background="#fafafa"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/comm_must_fill_term"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical"
+                    android:text="@string/set_personal_info_name" />
+
+                <EditText
+                    android:id="@+id/general_consume_loan_name"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:focusable="false"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/comm_must_fill_term"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical"
+                    android:text="身份证号码：" />
+
+                <EditText
+                    android:id="@+id/general_consume_loan_card_num"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                       android:focusable="false"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            
+<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_must_fill_term"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:text="@string/loan_money_count" />
+
+                <EditText
+                    android:id="@+id/general_consume_loan_loan_money_count"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="600元-5万元"
+                    android:inputType="number" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_must_fill_term"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:text="@string/contact_tel" />
+
+                <EditText
+                    android:id="@+id/general_consume_loan_contact_tel"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                       android:focusable="false"
+                    android:maxLength="11"
+                    android:inputType="phone" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:text="联系电话2：" />
+
+                <EditText
+                    android:id="@+id/general_consume_loan_contact_tel2"
+                    style="@style/editText_style"
+                    android:maxLength="11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+            
+
+       
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_must_fill_term"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:text="@string/address" />
+
+                <EditText
+                    android:id="@+id/general_consume_loan_address"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:focusable="false"
+                    android:hint="点击选择居住地址"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_must_fill_term"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:text="@string/work_unit" />
+
+                <EditText
+                    android:id="@+id/general_consume_loan_work_unit"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+         
+
+            <TextView
+                android:id="@+id/commit_apply_intention"
+                android:layout_width="wrap_content"
+                android:layout_height="40dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="40dip"
+                android:layout_marginTop="30dip"
+                android:background="@drawable/next"
+                android:paddingBottom="5dip"
+                android:paddingLeft="40dip"
+                android:paddingRight="40dip"
+                android:paddingTop="5dip"
+                android:text="@string/commit_apply_intention"
+                android:textColor="@drawable/commit_text_color_white_blues_selector"
+                android:textSize="18sp" />
+        </LinearLayout>
+        
+    </ScrollView>
+ <LinearLayout
+    	android:visibility="gone"
+        android:id="@+id/city_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffffff"
+        android:layout_alignParentBottom="true"
+ 
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/choose_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:textColor="#ff787878"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:text="确定" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <kankan.wheel.widget.WheelView
+                android:id="@+id/id_province"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </kankan.wheel.widget.WheelView>
+
+            <kankan.wheel.widget.WheelView
+                android:id="@+id/id_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </kankan.wheel.widget.WheelView>
+
+            <kankan.wheel.widget.WheelView
+                android:id="@+id/id_area"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </kankan.wheel.widget.WheelView>
+        </LinearLayout>
+    </LinearLayout>
+    
+</RelativeLayout>

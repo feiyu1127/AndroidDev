@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/changeback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="循环时贷"
+            android:textColor="#595959"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/risk_prompt_loan_rl_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="#61cbe4"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/head"
+                style="@style/head_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="变更绑定银行卡" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_oldBank"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="原始开户行：" />
+
+            <EditText
+                android:id="@+id/et_oldBankValue"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_oldBank"
+                android:background="@android:color/transparent"
+                android:focusable="false"
+                android:text="北京银行" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_oldCard"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="借记卡号：" />
+
+            <EditText
+                android:id="@+id/et_oldCardNum"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_oldCard"
+                android:background="@android:color/transparent"
+                android:hint="请输入借记卡号"
+                android:maxLength="16"
+                android:numeric="integer" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_newBank"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="新开户行：" />
+
+            <EditText
+                android:id="@+id/et_newBankValue"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_newBank"
+                android:background="@android:color/transparent"
+                android:focusable="false"
+                android:text="北京银行" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_newBank2"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="确认新开户行：" />
+
+            <EditText
+                android:id="@+id/et_newBankValue2"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_newBank2"
+                android:background="@android:color/transparent"
+                android:focusable="false"
+                android:text="北京银行" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_newCard"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新卡号：" />
+
+            <EditText
+                android:id="@+id/et_newCardNum"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_newCard"
+                android:background="@android:color/transparent"
+                android:hint="请输入新卡号"
+                android:maxLength="16"
+                android:numeric="integer" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_newCard2"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="确认新卡号：" />
+
+            <EditText
+                android:id="@+id/et_newCardNum2"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_newCard2"
+                android:background="@android:color/transparent"
+                android:hint="请再次输入新卡号"
+                android:maxLength="16"
+                android:numeric="integer" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_selectPassword"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="查询密码：" />
+
+            <EditText
+                android:id="@+id/et_selectPassword"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_selectPassword"
+                android:background="@android:color/transparent"
+                android:hint="请输入查询密码"
+                android:maxLength="6"
+                android:numeric="integer"
+                android:password="true" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tx_message"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="短信验证码" />
+
+            <EditText
+                android:id="@+id/et_message"
+                style="@style/editText_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tx_message"
+                android:background="@android:color/transparent"
+                android:hint="请输入验证码"
+                android:numeric="integer" />
+
+            <TextView
+                android:id="@+id/message_button_change"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/yanzhengma"
+                android:gravity="center"
+                android:text="获取短信验证码"
+                android:textColor="#fff" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dddddd" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/tijiao_button"
+                android:layout_marginTop="20dp"
+               
+                style="@style/next_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/xiaojinyin_tijiao_button_selector"
+                android:text="提交申请"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

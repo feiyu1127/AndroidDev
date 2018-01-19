@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/confirm_loan_info_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeaee"
+    android:orientation="vertical"
+    android:padding="20dp" 
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称及型号1："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_goods_name_mode1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品类型1："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_goods_type1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价格（元）1："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_price1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缴费首付金额1："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_cost_money1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称及型号2："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_goods_name_mode2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品类型2："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_goods_type2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价格（元）2："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缴费首付金额2："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_cost_money2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称及型号3："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_goods_name_mode3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品类型3："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_goods_type3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价格（元）3："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_price3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缴费首付金额3："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_cost_money3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="申请贷款金额："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_loan_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="贷款用途："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_loan_purpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="申请贷款期限："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_loan_time_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="还款方式："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_repayment_way"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开  户  行："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_open_an_account_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="户        名："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_account_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账        户："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="还款账号开户行："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_repayment_num_open_account_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="还款卡类型："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_repayment_card_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="借记卡号："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_bank_card_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="邮寄地址："
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirm_loan_info_tv_post_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#2b2b2b"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+        
+        <Button 
+            android:id="@+id/confirm_loan_info_btn_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/label_all_selected"
+            android:text="确认"
+            android:textSize="16sp"
+            android:textColor="#ffffff"/>
+        
+        <Button 
+            android:id="@+id/confirm_loan_info_btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_next_selector"
+            android:text="编辑"
+            android:textSize="16sp"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+    
+</LinearLayout>

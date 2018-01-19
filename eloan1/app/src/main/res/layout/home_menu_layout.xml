@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:scrollbars="@null"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/l1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/home_menubg_selector" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/menu_home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="主页"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/messageLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/mainLayout"
+                android:background="@drawable/home_menubg_selector1" >
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/menu_message" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="个人信息"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mapLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/messageLayout"
+                android:background="@drawable/home_menubg_selector" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/map" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="视频贷款机"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/miniLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/mapLayout"
+                android:background="@drawable/home_menubg_selector1" >
+
+                <ImageView
+                    android:id="@+id/image4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/menu_common1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="贷款小常识"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/actLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/miniLayout"
+                android:background="@drawable/home_menubg_selector"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/image_act"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/menu_act" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="活动公告"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/updateLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/actLayout"
+                android:background="@drawable/home_menubg_selector1" >
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/menu_version" />
+
+                <TextView
+                    android:id="@+id/tv_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="版本更新"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/update_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/image2"
+                    android:background="@drawable/need_update"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/aboutusLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/updateLayout"
+                android:background="@drawable/home_menubg_selector" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/menu_aboutus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="关于我们"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/youhui"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/aboutusLayout"
+                android:background="@drawable/home_menubg_selector1" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/notice" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="意见反馈"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/share"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/youhui"
+                android:background="@drawable/home_menubg_selector" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/share" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="我的分享"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lock"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/share"
+                android:background="@drawable/home_menubg_selector1" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="29.3dp"
+                    android:background="@drawable/dun" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="62dp"
+                    android:text="安全中心"
+                    android:textColor="@color/menu_text"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/quit"
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:layout_below="@id/lock"
+                android:layout_marginTop="20dp"
+                android:background="@color/menu_quit_bg"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="退出登录"
+                android:textColor="@drawable/home_menu_quit_selector"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

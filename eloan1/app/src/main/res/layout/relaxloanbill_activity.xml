@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="轻松贷"
+            android:textColor="#595959"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bill_details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:background="#69cae7" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="还款计划"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="客户名称:" />
+
+                <EditText
+                    android:id="@+id/client_name"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="合同编号:" />
+
+                <EditText
+                    android:id="@+id/contract_num"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="贷款期限:" />
+
+                <EditText
+                    android:id="@+id/loan_deadline"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="发放日期:" />
+
+                <EditText
+                    android:id="@+id/extenddate"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="到  期  日:" />
+
+                <EditText
+                    android:id="@+id/duedate"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还款方式:"
+                    android:layout_marginLeft="5dp"
+                    style="@style/input_style_other"/>
+
+                <EditText
+                    android:id="@+id/repay_way"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="贷款本金:"
+                    android:layout_marginLeft="5dp"
+                    style="@style/input_style_other" />
+
+                <EditText
+                    android:id="@+id/loan_money"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="扣款帐号:"
+                    android:layout_marginLeft="5dp"
+                    style="@style/input_style_other" />
+
+                <EditText
+                    android:id="@+id/withhold_num"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nianlilv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+               
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年  利  率:"
+                    android:layout_marginLeft="5dp"
+                    style="@style/input_style_other" />
+
+                <EditText
+                    android:id="@+id/month_interest_rate"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shouxufei"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手  续  费:"
+                    android:layout_marginLeft="5dp"
+                    style="@style/input_style_other" />
+
+                <EditText
+                    android:id="@+id/shouxufei_rate"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:paddingLeft="10dip"
+                    android:singleLine="true" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="25dip"
+                android:gravity="center_horizontal" >
+
+                <Button
+                    android:id="@+id/check_bill_relax"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/register_bt"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dip"
+                    android:paddingTop="10dip"
+                    android:text="还款计划明细"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="10dip"
+                android:gravity="center_vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

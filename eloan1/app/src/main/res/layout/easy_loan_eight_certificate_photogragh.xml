@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#dadce0"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/easy_loan_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/easy_loan_commen_title" />
+
+    <RelativeLayout
+        android:id="@+id/profession_info_easy_rl_body"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#fafafa" />
+
+        <ScrollView
+            android:id="@+id/ScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="50dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip" >
+
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView1"
+                            android:layout_below="@+id/imageView1"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/comm_must_fill_sign"
+                            android:text="身份证正面" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="2dp" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView2"
+                            android:layout_below="@+id/imageView2"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/comm_must_fill_sign"
+                            android:text="身份证反面" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            android:id="@+id/tv_host_pictrue"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView3"
+                            android:layout_below="@id/imageView3"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/comm_must_fill_sign"
+                            android:text="客户照片" />
+
+                        <Button
+                            android:id="@+id/bt_example"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dip"
+                            android:layout_alignTop="@+id/tv_host_pictrue"
+                            android:layout_toRightOf="@+id/tv_host_pictrue"
+                            android:background="@drawable/example_a"
+                            android:text="示例"
+                            android:textColor="#000000ff"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="2dp" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            android:id="@+id/tt1"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView4"
+                            android:layout_below="@+id/imageView4"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/comm_must_fill_sign"
+                            android:text="人行征信报告" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView5"
+                            android:layout_below="@+id/imageView5"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="其他" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_tianjia_right"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="visible" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/tianjia"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector_add" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/tianjia"
+                            android:layout_below="@+id/tianjia"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="添加人行征信报告" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_51"
+                        android:layout_width="fill_parent"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView51"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView51"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="人行征信报告1" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:id="@+id/rl_52"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView52"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView52"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="人行征信报告2" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_tianjia_right2"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/tianjia_two"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector_add" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/tianjia_two"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="添加人行征信报告" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_53"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView53"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView53"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="人行征信报告3" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:id="@+id/rl_54"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView54"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView54"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="人行征信报告4" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_tianjia_right3"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/tianjia_three"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector_add" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/tianjia_three"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="添加人行征信报告" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_55"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/imageView55"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/imageView55"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="人行征信报告5" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:id="@+id/rl_tianjia"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+
+                        <com.yucheng.byxf.mini.views.RoundAngleImageView
+                            android:id="@+id/tianjia_last"
+                            android:layout_width="115dp"
+                            android:layout_height="105dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/idcard_selector_add" />
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/tianjia_last"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="添加人行征信报告" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp"
+                        android:visibility="gone" >
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:background="#f7f8f9"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/commit_Info_next_button"
+                style="@style/next_button_style"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/next_step"
+                android:text="下一步"
+                android:textColor="@color/text_next_selector" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

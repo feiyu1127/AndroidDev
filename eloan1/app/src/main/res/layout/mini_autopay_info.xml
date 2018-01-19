@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#dadce0"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/iv_menu_common"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/back_selector" />
+
+        <TextView
+            style="@style/title_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:text="@string/consume_loan_titile" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#61cbe4"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/head"
+            style="@style/head_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="账单及自动扣款信息" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loan_application_info_rl_body"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#f7f8f9"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:id="@+id/loan_application_info_pay_sv_all_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:scrollbars="none"
+            android:layout_marginRight="20dp" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp" >
+
+                <LinearLayout
+                    android:id="@+id/repay_account_bank_text_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/input_style_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="账单日"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/repay_account_group"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/pay_account_button1"
+                            style="@style/button_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_left"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:text="6日" />
+
+                        <RadioButton
+                            android:id="@+id/pay_account_button2"
+                            style="@style/button_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_right"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="16日" />
+
+                        <RadioButton
+                            android:id="@+id/pay_account_button3"
+                            style="@style/button_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_right"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="26日" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!-- 还款卡长度 -->
+
+                <LinearLayout
+                    android:id="@+id/bank_num_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/repay_account_bank_text_ll" >
+
+                    <!-- 16位卡 -->
+
+                    <RelativeLayout
+                        android:id="@+id/card_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/text"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:lineSpacingMultiplier="1.5"
+                            android:text="您本人名下的北京银行借记卡号（如果为空，则我们默认为您希望主动还款，如需自动扣款，请联系客服设置扣款账号）"
+                            android:textColor="#787878" />
+
+                        <TextView
+                            android:id="@+id/cardnum_text"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text"
+                            android:layout_marginTop="10dp"
+                            android:paddingLeft="5dp"
+                            android:text="借记卡卡号"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/cardnum_ll"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_below="@+id/cardnum_text"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dip"
+                            android:background="@drawable/comm_input_bg"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/edit_card_no_value"
+                                style="@style/editText_style"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:maxLength="16"
+                                android:numeric="integer"
+                                android:paddingLeft="5dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/repay_setting_text_ll"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_below="@id/cardnum_ll"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/input_style_other"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="还款设置"
+                                android:textStyle="bold" />
+
+                            <RadioGroup
+                                android:id="@+id/repay_setting_group"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:orientation="horizontal" >
+
+                                <RadioButton
+                                    android:id="@+id/repay_setting_button1"
+                                    style="@style/button_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radio_left"
+                                    android:button="@null"
+                                    android:gravity="center"
+                                    android:text="最低还款额" />
+
+                                <RadioButton
+                                    android:id="@+id/repay_setting_button2"
+                                    style="@style/button_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radio_right"
+                                    android:button="@null"
+                                    android:checked="true"
+                                    android:gravity="center"
+                                    android:text="全部还款额" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:baselineAligned="false"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/repay_setting_text_ll"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    style="@style/input_style_other"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="推广员工ID"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/comm_input_bg"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal" >
+
+                                    <EditText
+                                        android:id="@+id/edit_spread_no"
+                                        style="@style/editText_style"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:maxEms="8"
+                                        android:numeric="integer"
+                                        android:paddingLeft="5dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    style="@style/input_style_other"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="推广员工姓名"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/comm_input_bg"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal" >
+
+                                    <EditText
+                                        android:id="@+id/edit_spread_name"
+                                        style="@style/editText_style"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:paddingLeft="5dp"
+                                        android:text="" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_tag"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bank_num_layout"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textColor="#F52100"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/next_button"
+                    style="@style/next_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_tag"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_next_selector"
+                    android:gravity="center_horizontal|center"
+                    android:text="下一步" />
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

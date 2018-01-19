@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dadce0"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <!-- ImageView
+            android:id="@+id/iv_menu_common"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/back_selector" /-->
+
+        <TextView
+            style="@style/title_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:text="@string/consume_loan_titile" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/risk_prompt_loan_rl_body"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#fafafa" />
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="#61cbe4"
+            android:gravity="center" >
+            
+            <TextView
+            android:id="@+id/head"
+            style="@style/head_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="合约书" />
+            
+        </LinearLayout>
+
+
+        <WebView
+            android:id="@+id/risk_prompt_loan_webview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:background="#00000000"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#fafafa" >
+
+            <Button
+                android:id="@+id/risk_prompt_loan_btn_disagree_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn_disagree"
+                android:text="不同意"
+                android:textColor="@color/text_selected"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/risk_prompt_loan_btn_agree_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_agree"
+                android:text="同意"
+                android:textColor="@color/text_next_selector"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

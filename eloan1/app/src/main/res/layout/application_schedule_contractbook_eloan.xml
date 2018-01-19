@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2ede6"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/app_schedule_query_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="核准确认书"
+            android:textColor="@color/headcolor"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/tishi_lyout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/tishi" />
+
+        <TextView
+            android:id="@+id/tishi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="温馨提示:请在30天之内确认核准确认书"
+            android:textColor="@color/color_text_28BFF1"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tishi_lyout"
+        android:layout_marginBottom="60dip"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re1"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="贷款合同号" />
+
+                <TextView
+                    android:id="@+id/tv_loan_contract_num"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re2"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re1"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="借款人姓名：" />
+
+                <TextView
+                    android:id="@+id/tv_loan_name"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re3"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re2"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="身份证件类型：" />
+
+                <TextView
+                    android:id="@+id/tv_identify_type"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re4"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re3"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="身份证号码：" />
+
+                <TextView
+                    android:id="@+id/tv_identify_num"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re0"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="放/还款户名:" />
+
+                <TextView
+                    android:id="@+id/tv_repay_name"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re00"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                		android:textSize="17sp"
+					android:textStyle="bold"
+					android:textColor="#191970"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="放/还款账号:" />
+
+                <TextView
+                    android:id="@+id/tv_loan_num"
+           		android:textSize="17sp"
+					android:textStyle="bold"
+					android:textColor="#191970"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re3"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="贷款金额(大写)：" />
+
+                <TextView
+                    android:id="@+id/tv_standed_loan_up"
+                    style="@style/editText_style"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re5"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="贷款金额(小写)：" />
+
+                <TextView
+                    android:id="@+id/tv_standed_loan_lower"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/app_schedule_re6"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg" >
+
+                <TextView
+                    android:id="@+id/tv_confirm_state"
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dip"
+                    android:text="贷款期限:" />
+
+                <TextView
+                    android:id="@+id/tv_loan_limit_time"
+                    style="@style/editText_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_toRightOf="@+id/tv_confirm_state" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="还款方式:" />
+
+                <TextView
+                    android:id="@+id/tv_repay_method"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="sfadf" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re8"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="贷款月利率:" />
+
+                <TextView
+                    android:id="@+id/tv_loan_month_interest"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="每月还款金额：" />
+
+                <TextView
+                    android:id="@+id/tv_repay_num"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re7"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                 
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="贷款用途:" />
+
+                <TextView
+                    android:id="@+id/tv_loan_popurse"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+<!-- 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="验 证 码:"
+                    android:textColor="#595959"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/timer"
+                    android:gravity="center"
+                    android:text="获取验证码"
+                    android:textColor="#595959"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/yanzhengma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/submit"
+                    android:layout_toRightOf="@id/textview"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:textColor="#595959"
+                    android:textSize="15sp" />
+            </RelativeLayout> -->
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/bt_loan_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/confirm" />
+    </LinearLayout>
+
+</RelativeLayout>

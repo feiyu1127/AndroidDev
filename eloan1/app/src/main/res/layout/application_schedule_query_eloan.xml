@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2ede6"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/app_schedule_query_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="申请进度查询"
+            android:textColor="@color/headcolor"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/daikuantitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#61cbe4"
+        android:gravity="center"
+        android:padding="5dip"
+        android:text="轻松贷申请进度"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/iv_line"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_shenqing2"
+                android:gravity="center" />
+
+            <RelativeLayout
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/iv_hezhun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/tishihezhun" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/app_sche_mess"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/app_schedule_re1"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="15dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            android:text="@string/approve_progress_name" />
+
+                        <TextView
+                            android:id="@+id/app_schedule_query_name"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/app_schedule_re2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="13dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            android:text="证件号码：" />
+
+                        <TextView
+                            android:id="@+id/app_schedule_query_zhengjian_num"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/app_schedule_re3"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="13dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            android:text="申请金额：" />
+
+                        <TextView
+                            android:id="@+id/app_schedule_query_shenqing_money"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_below="@id/app_schedule_re3"
+                        android:layout_marginTop="13dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            android:text="申请时间：" />
+
+                        <TextView
+                            android:id="@+id/app_schedule_query_shenpi_time"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="13dip"
+                        android:background="@drawable/comm_input_bg"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            android:id="@+id/tv_app_schedule_query_shenpi_state"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dip"
+                            android:text="审批状态：" />
+
+                       
+                        <Button
+                            android:id="@+id/bt_choice"
+                            style="@style/editText_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/choice_down_selector"
+                            android:visibility="gone" />
+
+                              <Button
+                            android:id="@+id/bt_showChoiseInfo"
+                            style="@style/editText_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                           android:layout_toLeftOf="@+id/bt_choice"
+                            android:background="@drawable/check_nomal"
+                            android:visibility="gone" />
+                        
+                        <TextView
+                            android:id="@+id/app_schedule_query_shenpi_state"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/bt_choice"
+                            android:layout_toRightOf="@id/tv_app_schedule_query_shenpi_state" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/app_schedule_re5"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="13dip"
+                        android:background="@drawable/comm_input_bg" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical" >
+
+                            <TextView
+                                style="@style/input_style_other"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dip"
+                                android:text="合同状态：" />
+
+                            <TextView
+                                android:id="@+id/app_schedule_query_hetong_state"
+                                style="@style/editText_style"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="13dip"
+                        android:background="@drawable/comm_input_bg" >
+
+                        <TextView
+                            android:id="@+id/tv_confirm_state"
+                            style="@style/input_style_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="5dip"
+                            android:text="核准确认状态:" />
+
+                        <TextView
+                            android:id="@+id/app_schedule_query_hezhun_confirmstate"
+                            style="@style/editText_style"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_toRightOf="@+id/tv_confirm_state" />
+
+                        <Button
+                            android:id="@+id/bt_check"
+                            style="@style/editText_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/check_nomal" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="13dip"
+                        android:background="@drawable/comm_input_bg" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical" >
+
+                            <TextView
+                                style="@style/input_style_other"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dip"
+                                android:text="放款状态:" />
+
+                            <TextView
+                                android:id="@+id/app_schedule_query_fangkuan_state"
+                                style="@style/editText_style"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/backhuodong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="我的消息"
+            android:textColor="#595959"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/messagetitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#61cbe4"
+        android:gravity="center"
+        android:padding="5dip"
+        android:text="消息详情"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="为安全支付代言，赢豪礼"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+           <TextView
+	            android:id="@+id/createTimeM"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="8dp"
+	            android:layout_marginTop="5dp"
+	            android:gravity="center"
+	            android:text="12:11"
+	            android:textColor="@android:color/black" />
+        </RelativeLayout>
+        
+        <View 
+            android:layout_width="fill_parent"
+            android:layout_height="3dp"
+            android:background="#E1E6F6"/>
+
+        <TextView
+            android:id="@+id/sysMsgDetialM"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="7dp"
+            android:lineSpacingExtra="5dp"
+            android:maxLines="2"
+            android:text="联盟成立一周年啦，在活动期间，你只需要关注“互联网金融支付...”"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</LinearLayout>

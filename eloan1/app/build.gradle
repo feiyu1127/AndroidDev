@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "27.0.1"
+
+    defaultConfig {
+        applicationId "com.yucheng.byxf.mini.ui"
+        minSdkVersion 14
+        targetSdkVersion 19
+
+        testApplicationId "com.yucheng.byxf.mini.ui1"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+
+    android{
+
+        useLibrary 'org.apache.http.legacy'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.google.code.gson:gson:1.3'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/ShareSDK-Core-2.5.7.jar')
+    compile files('libs/ShareSDK-Email-2.4.1.jar')
+    compile files('libs/ShareSDK-NetEaseMicroBlog-2.4.1.jar')
+    compile files('libs/ShareSDK-QQ-2.5.7.jar')
+    compile files('libs/ShareSDK-QZone-2.5.7.jar')
+    compile files('libs/ShareSDK-Renren-2.4.1.jar')
+    compile files('libs/ShareSDK-ShortMessage-2.4.1.jar')
+    compile files('libs/ShareSDK-SinaWeibo-2.5.7.jar')
+    compile files('libs/ShareSDK-TencentWeibo-2.5.7.jar')
+    compile files('libs/ShareSDK-Wechat-2.5.6.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.5.6.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.5.6.jar')
+    compile files('libs/common_entity_6.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+    compile files('libs/jpush-sdk-release1.7.5.jar')
+    compile files('libs/locSDK_3.1.jar')
+    compile files('libs/mframework.jar')
+    compile files('libs/mid-sdk-2.10.jar')
+    compile files('libs/mta-sdk-2.0.0.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile files('libs/slidingmenu.jar')
+    compile files('libs/socShare.jar')
+    compile files('libs/volley.jar')
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/bg_effective_recipe_border"
+    >
+
+    <ImageView
+        android:id="@+id/img_recipe"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/tom"
+        android:layout_margin="10dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/hos_time_block"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/img_recipe"
+        android:layout_marginLeft="20dp"
+        >
+        <TextView
+            android:id="@+id/hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交通大学口腔医院"
+            />
+        <TextView
+            android:id="@+id/doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hospital"
+            android:text="李医生"
+            />
+        <TextView
+            android:id="@+id/effective_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/doctor"
+            android:text="2018-01-19"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/is_effective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="已处理"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

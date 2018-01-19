@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2ede6"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbg" >
+
+        <ImageView
+            android:id="@+id/mini_card_activate_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/mini_card_jihuo"
+            android:textColor="@color/headcolor"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#61cbe4"
+        android:gravity="center"
+        android:padding="5dip"
+        android:text="@string/card_jihuo"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fafafa"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/app_sche_mess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip" >
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re1"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/mini_card_certificate_style" />
+
+                <TextView
+                    android:id="@+id/mini_card_certificate_style"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="身份证" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re2"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re1"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/mini_card_certificate_number" />
+
+                <TextView
+                    android:id="@+id/mini_card_certificate_number"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re3"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re2"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/card_number" />
+
+                <EditText
+                    android:id="@+id/mini_card_number"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:maxLength="19" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re4"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re3"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/mini_card_trade_psw" />
+
+                <EditText
+                    android:id="@+id/mini_card_trade_psw"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:maxLength="6"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re5"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re4"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/mini_card_confirm_psw" />
+
+                <EditText
+                    android:id="@+id/mini_card_confirm_psw"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:maxLength="6"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/app_schedule_re6"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re5"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="13dip"
+                android:background="@drawable/comm_input_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/input_style_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="C V V  码：" />
+
+                <EditText
+                    android:id="@+id/mini_card_cvv"
+                    style="@style/editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="卡号签名栏末3位数字"
+                    android:digits="1234567890"
+                    android:maxLength="3"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mini_card_atten_jihuo"
+                android:layout_width="wrap_content"
+                android:layout_height="40dip"
+                android:layout_below="@id/app_schedule_re6"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dip"
+                android:layout_marginTop="30dip"
+                android:background="@drawable/next"
+                android:gravity="center"
+                android:paddingBottom="5dip"
+                android:paddingLeft="40dip"
+                android:paddingRight="40dip"
+                android:paddingTop="5dip"
+                android:text="@string/mini_card_atten_jihuo"
+                android:textColor="@drawable/commit_text_color_white_blues_selector"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

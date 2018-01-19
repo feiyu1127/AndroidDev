@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="Transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="login_gray">#727070</color>
+    <color name="white">#ffffff</color>
+    <color name="background_color">#DADCE0</color>
+    <color name="filed_text_color">#4E4D4D</color>
+    <!-- 功能菜单 -->
+    <color name="function_menu_user_text">#D59321</color>
+    <color name="color_text_734d3f">#734d3f</color>
+    <color name="color_line_e9e3d9">#d6d3d3</color>
+    <!-- 销售统计 -->
+    <color name="color_text_cd2b22">#CD2B22</color>
+ <!-- 审批通过 -->
+    <color name="examing_color">#FDC502</color>
+ <!-- 审批中 -->
+    <color name="exam_no_color">#FF2F24</color>
+ <!-- 审批未通过 -->
+    <color name="exam_yes_color">#4697C6</color>
+ <!-- 审批通过 -->
+
+
+    <!-- 销售统计 -->
+    <color name="repar_plan_search">#4E4D4D</color>
+
+    <!-- 进度查询 -->
+    <color name="color_text_4e4d4d">#4e4d4d</color>
+    <color name="color_text_cccccc">#cccccc</color>
+
+    <!-- 公告栏 -->
+    <color name="color_text_28BFF1">#28BFF1</color>
+    <color name="color_text_183973">#183973</color>
+    <color name="background">#fff2ede9</color>
+    <color name="headcolor">#ff595959</color>
+    <color name="center_color">#fffafafa</color>
+    <color name="mini_listitem_bg">#69cae7</color>
+    <color name="menu_bg1">#fff7f7f7</color>
+    <color name="menu_bg2">#ffebebeb</color>
+    <color name="menu_bg_down">#ff64e4fc</color>
+
+    <drawable name="menu_quit_textdown">#ffc6ff00</drawable>
+    <drawable name="menu_quit_text">#ffffffff</drawable>
+
+    <color name="menu_quit_bg">#ff98c500</color>
+    <color name="menu_text">#ff595959</color>
+
+    <drawable name="call_text_down">#ff87e2ff</drawable>
+    <drawable name="call_text_normal">#ffffffff</drawable>
+    <!-- 一般消费贷 -->
+    <color name="color_blue2">#ff6a91ed</color>
+    <color name="gray_line">#B4B3B3</color>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:color="@drawable/call_text_normal" android:state_focused="true" ></item>
+    <item android:state_pressed="false" android:color="@drawable/call_text_normal"></item>
+    <item android:color="@drawable/call_text_down" android:state_pressed="true"></item>
+
+</selector>

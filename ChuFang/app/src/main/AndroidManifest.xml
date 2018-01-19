@@ -14,18 +14,17 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="处方系统">
-        </activity>
+            android:label="处方系统"></activity>
         <activity android:name=".UserListActivity" />
         <activity android:name=".AddUserActivity" />
-        <activity
-            android:name=".LoginActivity"
-           >
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.DrugstoreManageActivity"></activity>
     </application>
 
 </manifest>

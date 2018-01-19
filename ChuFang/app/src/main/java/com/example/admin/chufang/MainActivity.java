@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.admin.chufang.activities.DrugstoreManageActivity;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
@@ -58,15 +59,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         tabLayout.setupWithViewPager(viewPager);
 
 
-
         navView.setCheckedItem(R.id.recipe_transform); //默认选中
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.recipe_transform:
-//                        Toast.makeText(MainActivity.this,"user_list",Toast.LENGTH_SHORT).show();
-
+                        break;
+                    case R.id.drugstore_manage:
+                        Intent drugstoreManageIntent = new Intent(MainActivity.this, DrugstoreManageActivity.class);
+                        startActivity(drugstoreManageIntent);
                         break;
                     default:
                         break;
