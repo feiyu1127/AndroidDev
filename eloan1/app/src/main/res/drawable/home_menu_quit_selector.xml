@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:color="@drawable/menu_quit_text" android:state_focused="true" ></item>
-    <item android:state_pressed="false" android:color="@drawable/menu_quit_text"></item>
-    <item android:color="@drawable/menu_quit_textdown" android:state_pressed="true"></item>
-
-</selector>
