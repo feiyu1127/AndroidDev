@@ -4,15 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
@@ -22,7 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.admin.chufang.activities.DrugstoreManageActivity;
+import com.example.admin.chufang.fragments.ConvertFragment;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
@@ -36,44 +31,46 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        initNavigation();
+        initToolbar();
+        initPages();
+
+    }
+
+    /**
+     * 初始化 Toolbar
+     */
+    private void initToolbar(){
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        mDrawerLayout = findViewById(R.id.drawer_layout);
-        NavigationView navView = findViewById(R.id.nav_view);
-
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true); //让导航按钮显示
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu); //设置按钮图标
         }
+    }
 
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.vp_content);
-        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getSupportFragmentManager(),
-                this);
-        viewPager.setAdapter(adapter);
-
-        //TabLayout
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_tab);
-        tabLayout.setupWithViewPager(viewPager);
-
-
-        navView.setCheckedItem(R.id.recipe_transform); //默认选中
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+    /**
+     * 初始化导航
+     */
+    private void initNavigation(){
+        final NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setCheckedItem(R.id.recipe_convert); //默认选中
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.recipe_transform:
+                    case R.id.recipe_convert:
+                        loadFragment(new ConvertFragment());
                         break;
-                    case R.id.drugstore_manage:
-                        Intent drugstoreManageIntent = new Intent(MainActivity.this, DrugstoreManageActivity.class);
-                        startActivity(drugstoreManageIntent);
-                        break;
+//                    case R.id.drugstore_manage:
+//                        loadFragment(new );
+//                        break;
                     default:
                         break;
                 }
-
                 return  true;
             }
         });
@@ -102,7 +99,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar,menu);
-//        setIconEnable(menu,true);
         return true;
     }
 
@@ -131,4 +127,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         }
         return true;
     }
+
+
+    private void initPages(){
+        loadFragment(new ConvertFragment());
+    }
+
+    /**
+     * 加载布局
+     * @param fragment
+     */
+    private void loadFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.main_content,fragment);
+        transaction.commit();
+    }
+
 }

@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 public class EffectiveRecipeAdapter extends RecyclerView.Adapter<EffectiveRecipeAdapter.ViewHolder> {
-    private List<EffectiveRecipe> mEffectiveRecipeList;
+    private List<Recipe> mEffectiveRecipeList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView imgReceipt;
@@ -35,20 +35,20 @@ public class EffectiveRecipeAdapter extends RecyclerView.Adapter<EffectiveRecipe
         }
     }
 
-    public EffectiveRecipeAdapter(List<EffectiveRecipe> effectiveRecipeList){
+    public EffectiveRecipeAdapter(List<Recipe> effectiveRecipeList){
         mEffectiveRecipeList = effectiveRecipeList;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.effective_recipe_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.valid_recipe_item,parent,false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        EffectiveRecipe effectiveRecipe = mEffectiveRecipeList.get(position);
+        Recipe effectiveRecipe = mEffectiveRecipeList.get(position);
         holder.imgReceipt.setImageResource(effectiveRecipe.getImgReceipt());
         holder.hostipal.setText(effectiveRecipe.getHostipal());
         holder.doctor.setText(effectiveRecipe.getDoctor());

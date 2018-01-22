@@ -4,7 +4,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/recipe_transform"
+            android:id="@+id/recipe_convert"
             android:icon="@drawable/nav_call"
             android:title="处方转化"
             />
