@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.admin.chufang.fragments.ConvertFragment;
+import com.example.admin.chufang.fragments.ShopFragment;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
@@ -62,15 +63,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.recipe_convert:
+                    case R.id.recipe_convert: //处方转化
                         loadFragment(new ConvertFragment());
                         break;
-//                    case R.id.drugstore_manage:
-//                        loadFragment(new );
-//                        break;
+                    case R.id.shop_manage: //药店管理
+                        loadFragment(new ShopFragment());
+                        break;
                     default:
                         break;
                 }
+                mDrawerLayout.closeDrawers();
                 return  true;
             }
         });
