@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    tools:context=".adapter.MedicineAdapter">
+    <View style="@style/list_item_cell_seperator_layout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regularFcsj"
+        style="@style/textViewCell"
+        android:text="text1" />
+    <View style="@style/list_item_cell_seperator_layout" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regularCph"
+        style="@style/textViewCell"
+        android:text="text12" />
+    <View style="@style/list_item_cell_seperator_layout" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regularLc"
+        style="@style/textViewCell"
+        android:text="text13" />
+    <View style="@style/list_item_cell_seperator_layout" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/regularZDZ"
+        style="@style/textViewCell"
+        android:text="text14" />
+    <View style="@style/list_item_cell_seperator_layout" />
+</LinearLayout>

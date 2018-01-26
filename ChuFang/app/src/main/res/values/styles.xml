@@ -8,4 +8,31 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <!-- 分隔符 -->
+    <style name="list_item_seperator_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@android:color/holo_green_light</item>
+    </style>
+
+    <style name="list_item_cell_seperator_layout">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/holo_green_light</item>
+    </style>
+    <!-- 字体 -->
+    <style name="textViewHead">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#F00</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="textViewCell">
+        <item name="android:textSize">27sp</item>
+        <item name="android:textColor">#F00</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
 </resources>

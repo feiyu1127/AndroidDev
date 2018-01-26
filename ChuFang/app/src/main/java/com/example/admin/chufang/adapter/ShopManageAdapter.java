@@ -20,6 +20,7 @@ import java.util.List;
 
 public class ShopManageAdapter extends RecyclerView.Adapter<ShopManageAdapter.ViewHolder>{
 
+
     private List<Shop> mList = new ArrayList<>();
 
     public ShopManageAdapter(){

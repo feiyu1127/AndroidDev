@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    android:background="@drawable/bg_effective_recipe_border"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:id="@+id/medicine_code_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="药品条码 :"
+            />
+
+        <TextView
+            android:id="@+id/medicine_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/medicine_code_tag"
+            android:layout_marginLeft="10dp"
+            android:text="12541251"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:id="@+id/medicine_name_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="药品名称 :"
+            />
+
+        <TextView
+            android:id="@+id/medicine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/medicine_name_tag"
+            android:layout_marginLeft="10dp"
+            android:text="阿莫西林克拉维酸钾"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:id="@+id/manufacturer_name_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生产厂家 :"
+            />
+        <TextView
+            android:id="@+id/manufacturer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/manufacturer_name_tag"
+            android:layout_marginLeft="10dp"
+            android:text="国药集团汕头金石制药有限公司"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:id="@+id/trademark_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="所属类目 :"
+            />
+        <TextView
+            android:id="@+id/trademark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/trademark_tag"
+            android:layout_marginLeft="10dp"
+            android:text="金石宁"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:id="@+id/number_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数量 :"
+            />
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/number_tag"
+            android:layout_marginLeft="10dp"
+            android:text="2"
+            />
+    </RelativeLayout>
+
+</LinearLayout>
