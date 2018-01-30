@@ -5,11 +5,29 @@ package com.example.admin.chufang.entity;
  */
 
 public class HandleRecipe {
+    private String imgRecipe;
     private String medicine_code;
     private String medicine_name;
     private String manufacturer_name;
     private String trademark;
     private int number;
+    private int status;
+
+    public String getImgRecipe() {
+        return imgRecipe;
+    }
+
+    public void setImgRecipe(String imgRecipe) {
+        this.imgRecipe = imgRecipe;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public String getMedicine_code() {
         return medicine_code;

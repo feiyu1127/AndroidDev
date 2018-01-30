@@ -8,15 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.admin.chufang.entity.ErrorModel;
 import com.example.admin.chufang.entity.LoginEntity;
 import com.example.admin.chufang.entity.LoginModel;
 import com.example.admin.chufang.gson.ParseJson;
-import com.example.admin.chufang.httpRequest.HttpCallBackLisioner;
-import com.example.admin.chufang.httpRequest.HttpUtil;
+import com.example.admin.chufang.utils.HttpCallBackLisioner;
+import com.example.admin.chufang.utils.HttpUtil;
 
 import org.json.JSONException;
 

@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.admin.chufang.R;
-import com.example.admin.chufang.service.EffectiveRecipeAdapter;
-import com.example.admin.chufang.service.Recipe;
+import com.example.admin.chufang.entity.Recipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,7 @@ import java.util.List;
 public class ValidRecipeAdapter extends RecyclerView.Adapter<ValidRecipeAdapter.ViewHolder> {
 
     private Context mContext;
+
     private List<Recipe> mList = new ArrayList<>();
 
     public ValidRecipeAdapter(){
@@ -48,6 +49,8 @@ public class ValidRecipeAdapter extends RecyclerView.Adapter<ValidRecipeAdapter.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        mContext = parent.getContext();
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.valid_recipe_item,parent,false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
@@ -61,7 +64,7 @@ public class ValidRecipeAdapter extends RecyclerView.Adapter<ValidRecipeAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Recipe validRecipe = mList.get(position);
-        holder.imgReceipt.setImageResource(validRecipe.getImgReceipt());
+        Glide.with(mContext).load(mList.get(position).getImgReceipt()).into(holder.imgReceipt);
         holder.hostipal.setText(validRecipe.getHostipal());
         holder.doctor.setText(validRecipe.getDoctor());
         holder.effectiveDate.setText(validRecipe.getEffectiveDate());
@@ -75,7 +78,7 @@ public class ValidRecipeAdapter extends RecyclerView.Adapter<ValidRecipeAdapter.
         for(int i = 0;i < 10;i++){
             Recipe rc = new Recipe();
             mList.add(rc);
-            rc.setImgReceipt(R.drawable.my_icon);
+            rc.setImgReceipt("http://img1.3lian.com/2015/a1/91/d/58.jpg");
             rc.setHostipal("有效"+i+"医院");
             rc.setDoctor("周"+ i+ "医生");
             rc.setEffectiveDate("20178-01-22");

@@ -1,4 +1,4 @@
-package com.example.admin.chufang.httpRequest;
+package com.example.admin.chufang.utils;
 
 /**
  * Created by Richard on 2018/1/3.

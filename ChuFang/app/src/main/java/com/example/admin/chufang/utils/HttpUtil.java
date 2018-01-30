@@ -1,6 +1,15 @@
-package com.example.admin.chufang.httpRequest;
+package com.example.admin.chufang.utils;
 
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import com.example.admin.chufang.gson.Data;
+import com.example.admin.chufang.gson.InnerData;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Map;
@@ -65,4 +74,25 @@ public class HttpUtil {
         stringBuilder.append(address);
         return stringBuilder.toString();
     }
+
+
+    /**
+     * 解析返回的 JSON 数据
+     */
+
+    @Nullable
+    public static Data JsonToData(String response){
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("ChuFang");
+            String chufangContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(chufangContent,Data.class);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }

@@ -1,38 +1,32 @@
-package com.example.admin.chufang.service;
+package com.example.admin.chufang.entity;
+
+import android.graphics.Bitmap;
 
 /**
  * Created by admin on 2018/1/19.
  */
 
 public class Recipe {
-    private int imgReceipt;
-    private String hostipal;
+    private String imgReceipt;
+    private String hospital;
     private String doctor;
     private String effectiveDate;
     private String isEffective;
 
-//    public Recipe(int imgReceipt, String hostipal, String doctor, String effectiveDate, String isEffective){
-//        this.imgReceipt = imgReceipt;
-//        this.hostipal = hostipal;
-//        this.doctor = doctor;
-//        this.effectiveDate = effectiveDate;
-//        this.isEffective = isEffective;
-//    }
-
-    public int getImgReceipt() {
+    public String getImgReceipt() {
         return imgReceipt;
     }
 
-    public void setImgReceipt(int imgReceipt) {
+    public void setImgReceipt(String imgReceipt) {
         this.imgReceipt = imgReceipt;
     }
 
     public String getHostipal() {
-        return hostipal;
+        return hospital;
     }
 
     public void setHostipal(String hostipal) {
-        this.hostipal = hostipal;
+        this.hospital = hostipal;
     }
 
     public String getDoctor() {

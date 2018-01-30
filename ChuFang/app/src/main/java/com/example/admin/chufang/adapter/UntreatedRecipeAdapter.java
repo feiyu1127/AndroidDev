@@ -12,14 +12,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.admin.chufang.HandleRecipeActivity;
 import com.example.admin.chufang.MyApplication;
 import com.example.admin.chufang.R;
-import com.example.admin.chufang.service.Recipe;
+import com.example.admin.chufang.components.ImageDialog;
+import com.example.admin.chufang.entity.ErrorModel;
+import com.example.admin.chufang.entity.Recipe;
+import com.example.admin.chufang.gson.Data;
+import com.example.admin.chufang.gson.InnerData;
+import com.example.admin.chufang.gson.InnerDataList;
+import com.example.admin.chufang.gson.Medicine;
+import com.example.admin.chufang.utils.HttpRequest;
+import com.example.admin.chufang.utils.HttpUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * Created by admin on 2018/1/22.
@@ -51,40 +66,74 @@ public class UntreatedRecipeAdapter extends RecyclerView.Adapter<UntreatedRecipe
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         Recipe validRecipe = mList.get(position);
-        holder.imgReceipt.setImageResource(validRecipe.getImgReceipt());
-        holder.hostipal.setText(validRecipe.getHostipal());
+        Glide.with(mContext).load(mList.get(position).getImgReceipt()).into(holder.imgReceipt);
+        holder.hospital.setText(validRecipe.getHostipal());
         holder.doctor.setText(validRecipe.getDoctor());
         holder.effectiveDate.setText(validRecipe.getEffectiveDate());
         holder.isEffective.setText(validRecipe.getIsEffective());
 
+        //点击处理处方
         holder.isEffective.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int pos = holder.getLayoutPosition();
                 Intent intent = new Intent(MyApplication.getContext(),HandleRecipeActivity.class);
                 mContext.startActivity(intent);
+            }
+        });
+
+        //点击图片
+        holder.imgReceipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageDialog.Builder builder = new ImageDialog.Builder(mContext);
+                ImageDialog imageDialog = builder.create();
+                imageDialog.show();
+                imageDialog.setImageSrc(mList.get(position).getImgReceipt());
             }
         });
 
     }
 
     private void initData(){
+
         for(int i=0;i<10;i++){
             Recipe rc = new Recipe();
             mList.add(rc);
-            rc.setImgReceipt(R.drawable.ic_backup);
-            rc.setHostipal("未处理"+i+"医院");
-            rc.setDoctor("周"+ i+ "医生");
-            rc.setEffectiveDate("2018-01-2"+i);
-            rc.setIsEffective("未处理");
+            rc.setImgReceipt("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3446672618,225431101&fm=27&gp=0.jpg");
+            rc.setHostipal(i+"西京医院");
+            rc.setDoctor(i+"李医生");
+            rc.setEffectiveDate("2018-01-30");
+            rc.setIsEffective("待处理");
         }
+
+
+        //---------------------- 请求服务器数据
+//        String url = "https://chufang-api.victtech.com/api/v1/recipes?status=5";
+//        HttpRequest.sendOkHttpRequest(url, new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                    Toast.makeText(mContext,"获取数据失败!",Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                    final String responseText = response.body().string();
+//                    final Data data = HttpUtil.JsonToData(responseText);
+//                    if(data != null && "0".equals(data.code)) {
+//                            showDataInfo(data.innerDataLists);
+//                    }else{
+//                            Toast.makeText(mContext,data.message,Toast.LENGTH_SHORT).show();
+//                    }
+//            }
+//        });
+
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView imgReceipt;
-        TextView hostipal;
+        TextView hospital;
         TextView doctor;
         TextView effectiveDate;
         TextView isEffective;
@@ -92,7 +141,7 @@ public class UntreatedRecipeAdapter extends RecyclerView.Adapter<UntreatedRecipe
         public ViewHolder(View view) {
             super(view);
             imgReceipt = view.findViewById(R.id.img_recipe);
-            hostipal = view.findViewById(R.id.hospital);
+            hospital = view.findViewById(R.id.hospital);
             doctor = view.findViewById(R.id.doctor);
             effectiveDate = view.findViewById(R.id.effective_date);
             isEffective = view.findViewById(R.id.is_effective);
@@ -100,13 +149,37 @@ public class UntreatedRecipeAdapter extends RecyclerView.Adapter<UntreatedRecipe
     }
 
 
-     class replaceFragmentClass extends FragmentActivity{
-        public void  replaceFragment(Fragment fragment){
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.replace(R.id.main_content,fragment);
-            transaction.commit();
-        }
+    /**
+     * 显示数据
+     * @param innerDataList
+     */
+
+    private void showDataInfo(InnerDataList innerDataList){
+            for(InnerData innerData : innerDataList.innerDataList){
+                Recipe rc = new Recipe();
+                mList.add(rc);
+//                Glide.with(mContext).load(mList.get(position).getImgReceipt()).into(holder.imgReceipt);
+
+//                rc.setImgReceipt(innerData.recipe_img);
+                rc.setHostipal(innerData.hospital);
+                rc.setDoctor(innerData.doctor);
+                rc.setEffectiveDate(innerData.created_at);
+
+                switch (innerData.status){
+                    case 0:
+                        rc.setIsEffective("无效");
+                        break;
+                    case 1:
+                        rc.setIsEffective("有效");
+                        break;
+                    case -1:
+                        rc.setIsEffective("未处理");
+                        break;
+                    default:
+                        break;
+                }
+            }
     }
+
 
 }

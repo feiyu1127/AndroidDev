@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.example.admin.chufang.R;
 import com.example.admin.chufang.entity.HandleRecipe;
-import com.example.admin.chufang.service.Recipe;
 
 import java.util.ArrayList;
 import java.util.List;

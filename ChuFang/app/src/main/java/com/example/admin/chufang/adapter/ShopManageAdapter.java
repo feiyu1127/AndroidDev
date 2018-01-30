@@ -7,8 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.admin.chufang.R;
-import com.example.admin.chufang.service.Recipe;
-import com.example.admin.chufang.service.Shop;
+import com.example.admin.chufang.entity.Shop;
 
 import java.util.ArrayList;
 import java.util.List;
