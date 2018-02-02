@@ -46,9 +46,11 @@ public class UntreatedRecipeAdapter extends RecyclerView.Adapter<UntreatedRecipe
     private static final String TAG = "UntreatedRecipeAdapter";
     private List<Recipe> mList = new ArrayList<>();
 
-    public UntreatedRecipeAdapter(){
+    public UntreatedRecipeAdapter(){ //构造方法
         initData();
     }
+
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
