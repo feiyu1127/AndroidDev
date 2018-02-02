@@ -34,12 +34,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
+                    android:id="@+id/user_phone"
                     android:layout_marginBottom="15dp"
+                    android:text="15200000002"
                     android:hint="手机号"/>
                 <com.victtech.component.CustomEditText
+                    android:id="@+id/user_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
+                    android:text="123456789"
                     android:layout_marginBottom="15dp"
                     android:hint="密码"/>
                 <com.victtech.component.CustomButton

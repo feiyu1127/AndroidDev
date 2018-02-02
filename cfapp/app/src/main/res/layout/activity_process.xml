@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.victtech.component.CustomHeader
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardCornerRadius="0dp"
+        android:layout_marginBottom="1dp"
+        >
+        <com.sunfusheng.glideimageview.GlideImageView
+            android:id="@+id/chufang_photo"
+            android:src="@drawable/ic_home_black_48dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <com.sunfusheng.glideimageview.GlideImageView
+            android:id="@+id/chufang_loading"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/medicine_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:padding="10dp">
+                <TextView
+                    android:background="@drawable/split"
+                    android:gravity="center"
+                    android:text="处方处理" />
+                <TableRow android:layout_marginBottom="5dp">
+                    <TextView android:text="医院名称：" />
+                    <com.victtech.component.CustomEditText
+                        android:id="@+id/hospital_name"
+                        android:inputType="text" />
+                </TableRow>
+                <TableRow android:layout_marginBottom="5dp">
+                    <TextView android:text="大夫名称：" />
+                    <com.victtech.component.CustomEditText
+                        android:id="@+id/doctor_name"
+                        android:inputType="text" />
+                </TableRow>
+                <TableRow>
+                    <TextView android:text="是否有效：" />
+                    <LinearLayout>
+                        <RadioGroup
+                            android:id="@+id/radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有效"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="无效"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+            <com.victtech.component.CustomButton
+                android:id="@+id/process_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/colorText"
+                android:padding="0dp"
+                android:layout_marginBottom="10dp"
+                android:text="处理"/>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

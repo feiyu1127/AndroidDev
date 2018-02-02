@@ -24,4 +24,9 @@ public class ParseJson {
             return t;
         }
     }
+
+    public static String toJson(Object obj){
+        Gson gson = new Gson();
+        return gson.toJson(obj);
+    }
 }

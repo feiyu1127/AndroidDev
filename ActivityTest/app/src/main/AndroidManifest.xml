@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.nwei.activitytest">
+    package="com.example.admin.activitytest">
 
     <application
         android:allowBackup="true"
@@ -9,33 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".FirstActivity"
-            android:launchMode="singleTop"
-            android:label="这是第一个活动">
+        <activity android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SecondActivity"
-            android:launchMode="singleInstance"
-            >
-            <intent-filter>
-                <action android:name="com.example.nwei.activitytest.ACTION_START" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.example.nwei.activitytest.MY_CATEGORY" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".ThirdActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="http" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".SecondActivity"></activity>
     </application>
 
 </manifest>

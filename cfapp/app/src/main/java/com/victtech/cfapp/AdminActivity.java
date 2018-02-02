@@ -1,5 +1,6 @@
 package com.victtech.cfapp;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -27,6 +28,7 @@ import com.victtech.cfapp.fragment.ChuFang1Fragment;
 import com.victtech.cfapp.fragment.ConvertFragment;
 import com.victtech.cfapp.fragment.ShopFragment;
 import com.victtech.component.CustomViewPager;
+import com.victtech.tools.ActivityContent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +80,7 @@ public class AdminActivity extends BaseActivity {
         RelativeLayout headerLayout = (RelativeLayout)navigationView.getHeaderView(0);
         //动态设置头像
         CircleImageView userAvatar = headerLayout.findViewById(R.id.user_avatar);
-        userAvatar.setImageDrawable(getResources().getDrawable(R.drawable.nav_avatar));
+        userAvatar.setImageDrawable(getResources().getDrawable(R.drawable.nav_avatar,null));
 
         ColorStateList cl = CFApplication.getContext().getColorStateList(R.color.navigation_menu_item_color);
         navigationView.setItemTextColor(cl);
@@ -98,6 +100,14 @@ public class AdminActivity extends BaseActivity {
                         break;
                     case R.id.user:
                         loadFragment(new ChuFang1Fragment("zzz"));
+                        break;
+                    case R.id.exit:
+                        CFApplication.ClearTmpUser();
+                        ActivityContent.finishAll();
+                        break;
+                    case R.id.upload_cf:
+                        Intent intent = new Intent(CFApplication.getContext(),UploadActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 drawerLayout.closeDrawers();

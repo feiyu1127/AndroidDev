@@ -8,7 +8,14 @@
             android:title="药店管理"
             android:icon="@drawable/ic_home_black_48dp"/>
         <item android:id="@+id/user"
-            android:title="用户管理"
-            android:icon="@drawable/ic_face_black_48dp"/>
+        android:title="用户管理"
+        android:icon="@drawable/ic_face_black_48dp"/>
+        <item android:id="@+id/exit"
+            android:title="退    出"
+            android:icon="@drawable/ic_exit_to_app_black_48dp"/>
+        <item
+            android:id="@+id/upload_cf"
+            android:title="上传处方"
+            android:icon="@drawable/ic_import_export_black_48dp"/>
     </group>
 </menu>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radio_width">20dp</dimen>
+    <dimen name="radio_height">20dp</dimen>
+    <dimen name="radio_corner">10dp</dimen>
+</resources>

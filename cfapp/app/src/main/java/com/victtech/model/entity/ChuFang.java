@@ -9,6 +9,9 @@ public class ChuFang {
     private String name;
     private String hospital;
     private String avatar;
+    private String recipe_img;
+    private String created_at;
+    private Medicine[] medicines;
 
     public String getName() {
         return name;
@@ -40,5 +43,29 @@ public class ChuFang {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public String getRecipe_img() {
+        return recipe_img;
+    }
+
+    public void setRecipe_img(String recipe_img) {
+        this.recipe_img = recipe_img;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public Medicine[] getMedicines() {
+        return medicines;
+    }
+
+    public void setMedicines(Medicine[] medicines) {
+        this.medicines = medicines;
     }
 }

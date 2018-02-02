@@ -42,7 +42,7 @@ public class ConvertFragment extends Fragment {
 
     private void initData(){
         ViewPager viewPager = rootView.findViewById(R.id.cf_view);
-
+        viewPager.setOffscreenPageLimit(1);
         ConvertFragmentAdapter adapter = new ConvertFragmentAdapter(getFragmentManager());
         viewPager.setAdapter(adapter);
 

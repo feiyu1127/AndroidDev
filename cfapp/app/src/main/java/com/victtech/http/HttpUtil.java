@@ -1,6 +1,17 @@
 package com.victtech.http;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
+
+import com.bumptech.glide.RequestBuilder;
+import com.victtech.cfapp.BaseActivity;
+import com.victtech.cfapp.CFApplication;
+import com.victtech.cfapp.receiver.NoAccessReceiver;
+import com.victtech.model.BaseModel;
+
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.Map;
@@ -17,26 +28,49 @@ import okhttp3.Response;
 
 public class HttpUtil {
     private static String HOST = "https://chufang-api.victtech.com/api/v1/";
-    public static void getRequest(final String address, final HttpCallBackLisioner callBackLisioner){
+    public static void getRequest(final String address, final HttpCallBackLisioner callBackLisioner, @Nullable final String token){
         new Thread(new Runnable() {
             @Override
             public void run() {
                 OkHttpClient okHttpClient = new OkHttpClient();
-                Request request = new Request.Builder().url(getAddrss(address)).build();
+                Request.Builder builder = new Request.Builder().url(getAddrss(address));
+                if(token!=null){
+                    builder.addHeader("token",token);
+                }
+                Request request = builder.build();
                 try {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     Response response = okHttpClient.newCall(request).execute();
-                    callBackLisioner.onFinish(response.body().string());
+                    String responseStr = response.body().string();
+                    accessDenied(responseStr);
+                    callBackLisioner.onFinish(responseStr);
                 } catch (IOException e) {
+                    callBackLisioner.onError(e);
+                } catch (JSONException e){
                     callBackLisioner.onError(e);
                 }
             }
         }).start();
     }
 
-    public static void postRequest(final String address,final HttpCallBackLisioner callBackLisioner, @Nullable final Map<String,String> params){
+    public static void postRequest(final String address,final HttpCallBackLisioner callBackLisioner, @Nullable final Map<String,String> params, @Nullable final String token){
         new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Request.Builder builder = new Request.Builder().url(getAddrss(address));
+                if(token != null)
+                {
+                    builder.addHeader("token",token);
+                }
                 RequestBody requestBody = new FormBody.Builder().build();
                 if(params != null){
                     FormBody.Builder bodyBuilder = new FormBody.Builder();
@@ -46,11 +80,15 @@ public class HttpUtil {
                     requestBody = bodyBuilder.build();
                 }
                 OkHttpClient okHttpClient = new OkHttpClient();
-                Request request = new Request.Builder().url(getAddrss(address)).post(requestBody).build();
+                Request request = builder.post(requestBody).build();
                 try {
                     Response response = okHttpClient.newCall(request).execute();
-                    callBackLisioner.onFinish(response.body().string());
+                    String responseStr = response.body().string();
+                    accessDenied(responseStr);
+                    callBackLisioner.onFinish(responseStr);
                 } catch (IOException e) {
+                    callBackLisioner.onError(e);
+                } catch (JSONException e){
                     callBackLisioner.onError(e);
                 }
             }
@@ -62,5 +100,13 @@ public class HttpUtil {
         stringBuilder.append(HOST);
         stringBuilder.append(address);
         return stringBuilder.toString();
+    }
+
+    private static void accessDenied(String bodyString) throws JSONException {
+        BaseModel base = ParseJson.parseJson(bodyString, BaseModel.class);
+        if(base.getCode()==401){
+            CFApplication.ClearTmpUser();
+            CFApplication.send401Broadcast();
+        }
     }
 }

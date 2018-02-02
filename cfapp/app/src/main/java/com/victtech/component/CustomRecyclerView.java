@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import com.victtech.tools.LogUtil;
+
 /**
  * Created by Richard on 2018/1/18.
  */
@@ -18,19 +20,19 @@ public class CustomRecyclerView extends RecyclerView {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d("************", "dispatchTouchEvent: ");
+        LogUtil.d("************", "dispatchTouchEvent: ");
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-        Log.d(")))))))))))))))", "onTouchEvent: ");
+        LogUtil.d(")))))))))))))))", "onTouchEvent: ");
         return true;
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent e) {
-        Log.d("((((((((((((((((((((", "onInterceptTouchEvent: ");
+        LogUtil.d("((((((((((((((((((((", "onInterceptTouchEvent: ");
         return super.onInterceptTouchEvent(e);
     }
 }

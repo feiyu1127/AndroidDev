@@ -7,4 +7,5 @@
     <color name="colorBord">#B7E2ED</color>
     <color name="colorTextBlack">#0A0A0A</color>
     <color name="colorGrayBg">#888888</color>
+    <color name="colorGrayLightBg">#c3c3c3</color>
 </resources>

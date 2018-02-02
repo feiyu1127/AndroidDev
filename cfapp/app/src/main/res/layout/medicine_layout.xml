@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="3dp"
+                    android:text="药品序号:" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ser_num"
+                    android:paddingRight="3dp"
+                    android:text="666666666666" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content"
+                    android:paddingRight="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="药品名称:" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/medicine_name"
+                    android:paddingRight="3dp"
+                    android:text="阿莫西林胶囊" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content"
+                    android:paddingRight="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="药品厂商:" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/medicine_vendor"
+                    android:paddingRight="3dp"
+                    android:text="国药集团汕头金石制药" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

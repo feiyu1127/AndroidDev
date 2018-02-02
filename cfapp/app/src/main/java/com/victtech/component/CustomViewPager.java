@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import com.victtech.tools.LogUtil;
+
 /**
  * Created by Richard on 2018/1/17.
  */
@@ -28,14 +30,14 @@ public class CustomViewPager extends ViewPager {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d("===============", "dispatchTouchEvent: ===================");
+        LogUtil.d("===============", "dispatchTouchEvent: ===================");
         return super.dispatchTouchEvent(ev);
 
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d("--------", String.valueOf(noScroll) );
+        LogUtil.d("--------", String.valueOf(noScroll) );
         if(noScroll){
             return false;
         }else{
@@ -46,7 +48,7 @@ public class CustomViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        Log.d("++++++++++++", "+++++++++++");
+        LogUtil.d("++++++++++++", "+++++++++++");
         return super.onTouchEvent(ev);
 //        if(noScroll){
 //            return false;

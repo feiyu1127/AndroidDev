@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.victtech.cfapp.R;
+import com.victtech.tools.LogUtil;
 
 /**
  * Created by Richard on 2018/1/19.
@@ -22,16 +23,17 @@ import com.victtech.cfapp.R;
 public class ImageDialog extends Dialog implements View.OnClickListener {
     ImageView imageView;
     Context mContext;
-    public ImageDialog(@NonNull Context context) {
+    private ImageDialog(@NonNull Context context) {
         super(context,R.style.ImageDialogTheme);
         mContext = context;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("[][][]", "onCreate: ");
+        LogUtil.d("[][][]", "onCreate: ");
         super.onCreate(savedInstanceState);
         this.setCancelable(true);
+        this.setCanceledOnTouchOutside(true);
         this.setContentView(R.layout.image_dialog_layout);
         imageView = this.findViewById(R.id.img_dialog_avatar);
         imageView.setOnClickListener(this);
@@ -44,6 +46,11 @@ public class ImageDialog extends Dialog implements View.OnClickListener {
 
     public ImageDialog setImageSrc(String imgSrc){
         Glide.with(mContext).load(imgSrc).into(imageView);
+        return this;
+    }
+
+    public ImageDialog setImageSrc(Drawable imgSrc){
+        imageView.setImageDrawable(imgSrc);
         return this;
     }
 
