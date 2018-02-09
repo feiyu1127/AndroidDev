@@ -149,20 +149,21 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
             }
             outputImage.createNewFile();
 
-            if(Build.VERSION.SDK_INT >= 24){
-                imageUri = FileProvider.getUriForFile(mContext,"com.take.image",outputImage);
-            }else{
-                imageUri = Uri.fromFile(outputImage);
-            }
-
-            //启动相机
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
-            startActivityForResult(intent,TAKE_PHOTO);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        if(Build.VERSION.SDK_INT >= 24){
+            imageUri = FileProvider.getUriForFile(mContext,"com.take.image",outputImage);
+        }else{
+            imageUri = Uri.fromFile(outputImage);
+        }
+
+        //启动相机
+        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
+        startActivityForResult(intent,TAKE_PHOTO);
+
     }
 
 
@@ -185,6 +186,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
                 }
                 break;
             default:
+                Log.d("没有走进拍照", "onActivityResult: ");
                 break;
         }
     }
