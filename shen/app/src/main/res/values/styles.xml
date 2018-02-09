@@ -9,11 +9,11 @@
     </style>
 
 
-    <style name="theme_fullScreen">
-        <!-- 设置无标题 -->
-        <item name="android:windowNoTitle">true</item>
-        <!--<span style="white-space:pre"></span>-->
-        <item name="android:typeface">monospace</item>
+    <!-- 修改下划线颜色 -->
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">@android:color/darker_gray</item>
     </style>
+
 
 </resources>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8FF"
+    android:background="@color/snow"
     tools:context="com.nwei.shen.activities.user.LoginActivity">
 
     <android.support.v7.widget.Toolbar
@@ -17,7 +16,7 @@
             android:id="@+id/login_toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="用户登录"
+            android:text="参宝财富登录"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="#000"
@@ -46,11 +45,12 @@
                 android:text="账号"
                 />
             <EditText
-                android:id="@+id/request_phone"
+                android:id="@+id/login_request_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="15200000001"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:theme="@style/MyEditText"
                 />
         </LinearLayout>
 
@@ -70,11 +70,12 @@
                 android:text="密码"
                 />
             <EditText
-                android:id="@+id/request_password"
+                android:id="@+id/login_request_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="123456"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:theme="@style/MyEditText"
                 android:inputType="textPassword"
                 />
         </LinearLayout>
@@ -88,13 +89,17 @@
             android:layout_marginTop="30dp"
             >
             <Button
+                android:id="@+id/login_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="登录"
+                android:background="@drawable/button_shape"
+                android:textColor="#fff"
+                android:text="登&#160;&#160;录"
                 />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/quick_register_block"
             android:layout_below="@+id/login_button_block"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,7 +112,21 @@
                 android:layout_height="wrap_content"
                 android:text="快速注册"
                 />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/quick_register_block"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            >
+            <TextView
+                android:id="@+id/login_to_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进入首页"
+                />
         </LinearLayout>
 
     </RelativeLayout>

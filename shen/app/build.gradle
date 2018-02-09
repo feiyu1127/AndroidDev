@@ -9,6 +9,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
     }
     buildTypes {
         release {
@@ -21,11 +27,19 @@ android {
             res.srcDirs =
                     [
                             'src/main/res/layout/user',
+                            'src/main/res/layout/main',
+                            'src/main/res/layout/test',
                             'src/main/res/layout',
                             'src/main/res'
                     ]
         }
     }
+    allprojects { //走势图
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
+
 }
 
 
@@ -34,7 +48,34 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    compile 'com.android.support:design:26.1.0'
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'org.litepal.android:core:1.6.1'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.bm.photoview:library:1.4.1'
+    compile 'com.lzy.widget:ninegridview:0.2.0'
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3' //折线图
+    compile project (':JNChartLib')
+
+    compile 'com.lzy.net:okgo:3.0.4' // okhttp-OkGo
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.9' //图片上传
+
+    compile 'com.bigkoo:convenientbanner:2.0.5' //轮播图
+    compile files('libs/universal-image-loader-1.9.4.jar')
+    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+    compile 'in.srain.cube:grid-view-with-header-footer:1.0.12'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+
 }

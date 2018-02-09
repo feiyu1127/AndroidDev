@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +14,7 @@
               android:id="@+id/text_register_toolbar"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="用户注册"
+              android:text="参宝财富注册"
               android:textStyle="bold"
               android:textSize="18sp"
               android:textColor="#000"
@@ -27,91 +26,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="?attr/actionBarSize"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
         android:padding="10dp"
         >
-        <LinearLayout
-            android:id="@+id/text_register_name_block"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="姓名"
-                />
-            <EditText
-                android:id="@+id/request_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="赵云"
-                />
-        </LinearLayout>
         <LinearLayout
         android:id="@+id/text_register_phone_block"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_register_name_block"
         android:orientation="horizontal"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="手机号"
-            />
         <EditText
-            android:id="@+id/request_phone"
+            android:id="@+id/register_request_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="15200000001"
+            android:padding="8dp"
+            android:maxLength="11"
+            android:inputType="number"
+            android:hint="手机号"
+            android:theme="@style/MyEditText"
+            android:background="@drawable/edit_text_bg"
+            android:textCursorDrawable="@drawable/color_cursor"
             />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/text_register_password_block"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_below="@+id/text_register_phone_block"
             android:orientation="horizontal"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:text="密码"
-                />
             <EditText
-                android:id="@+id/request_password"
+                android:id="@+id/register_request_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="8dp"
                 android:layout_weight="1"
-                android:text="15200000001"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/sex_spinner_block"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_register_password_block"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:text="性别"
-                />
-            <Spinner
-                android:id="@+id/spinner_sex"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:entries="@array/sex"
+                android:hint="密码"
+                android:background="@drawable/edit_text_bg"
+                android:theme="@style/MyEditText"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:inputType="textPassword"
                 />
         </LinearLayout>
 
@@ -119,33 +79,49 @@
             android:id="@+id/verify_code_block"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sex_spinner_block"
+            android:layout_below="@+id/text_register_password_block"
             android:orientation="horizontal"
             >
             <EditText
-                android:id="@+id/verify_code"
+                android:id="@+id/register_verify_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="521252"
+                android:theme="@style/MyEditText"
+                android:padding="8dp"
+                android:hint="填写验证码"
+                android:background="@drawable/edit_text_bg"
+                android:textCursorDrawable="@drawable/color_cursor"
                 />
             <Button
-                android:id="@+id/send_verify_code"
+                android:id="@+id/register_send_verify_code_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发送验证码"
+                android:minHeight="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_send_verify_code"
+                android:text="获取验证码"
+                android:textColor="#fff"
                 />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:layout_below="@+id/verify_code_block"
             >
             <Button
+                android:id="@+id/register_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="注册"
+                android:background="@drawable/button_shape"
+                android:textColor="#fff"
+                android:text="注&#160;&#160;册"
                 />
         </LinearLayout>
 
