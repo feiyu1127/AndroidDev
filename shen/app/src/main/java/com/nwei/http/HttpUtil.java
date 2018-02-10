@@ -17,7 +17,7 @@ import okhttp3.Response;
 
 public class HttpUtil {
 
-    private static String HOST = "http://api.shenbaocaifu.com:8080/api/v1/";
+    private static String HOST = "https://chufang-api.victtech.com/api/v1/";
 
     /**
      * get 请求

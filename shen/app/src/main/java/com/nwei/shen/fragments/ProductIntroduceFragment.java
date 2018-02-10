@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,9 +23,19 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 
 import com.nwei.R;
+import com.nwei.http.HttpCallBackLisioner;
+import com.nwei.http.HttpUtil;
+import com.nwei.http.ParseJson;
+import com.nwei.model.Qiniu;
 
+import org.json.JSONException;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
@@ -35,17 +46,20 @@ import static android.app.Activity.RESULT_OK;
 
 public class ProductIntroduceFragment extends Fragment implements View.OnClickListener{
 
+    private static final String TAG = "ProductIntroduceFragmen";
+    
     View view;
     Context mContext;
     ImageView uploadImg;
 
     Button takePhotoBtn;
+    Button confirmUploadBtn;
     Button bt_album;
     Button bt_camera;
     Button bt_cancle;
 
     private final int TAKE_PHOTO = 1;
-    private final int OPEN_ALBUM = 2;
+    private final int CHOOSE_PHOTO = 2;
     Uri imageUri;
 
     @Nullable
@@ -63,6 +77,31 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
 
         uploadImg = view.findViewById(R.id.uploadImg);
         takePhotoBtn = view.findViewById(R.id.takePhotoBtn);
+        confirmUploadBtn = view.findViewById(R.id.confirmUploadBtn);
+
+        //请求 api 获取七牛token
+        confirmUploadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HttpUtil.getRequest("qiniu-token", new HttpCallBackLisioner() {
+                    @Override
+                    public void onFinish(String requestString) {
+                        try {
+                            Qiniu qiniu = ParseJson.parseJson(requestString,Qiniu.class);
+                            Log.d("qiniu", qiniu.getMessage());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        e.printStackTrace();
+                    }
+                },"$2y$10$3xSZ8FdEBI95btXkj2dwLOkAfo8soTvqfv1c4bRgwHdyxJgSN76Ou");
+            }
+        });
+
 
         takePhotoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +110,9 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
                 popupWindow();
             }
         });
+
+
+
 
     }
 
@@ -98,6 +140,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
         window.setOutsideTouchable(true);
         window.setTouchable(true);
 
+        //相机拍照
         bt_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,15 +149,17 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
             }
         });
 
+        //相册选择
         bt_album.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, OPEN_ALBUM);
+                startActivityForResult(i, CHOOSE_PHOTO);
                 window.dismiss();
             }
         });
 
+        //取消按钮
         bt_cancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,6 +187,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
      * 打开相机拍照
      */
     private void openCamera(){
+        //getExternalCacheDir() 获取应用关联缓存目录
         File outputImage = new File(mContext.getExternalCacheDir(),"output_image.jpg");
         try {
             if(outputImage.exists()){
@@ -160,7 +206,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
         }
 
         //启动相机
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
         startActivityForResult(intent,TAKE_PHOTO);
 
@@ -168,12 +214,11 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
 
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    public void onActivityResult(final int requestCode, int resultCode, final Intent data) {
 
         switch (requestCode){
             case TAKE_PHOTO:
-                if(requestCode == RESULT_OK){
+                if(resultCode == RESULT_OK){
                     try {
                         Log.d("拍照相机", imageUri+"");
                         //将拍摄的照片显示出来
@@ -185,9 +230,117 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
                     }
                 }
                 break;
+            case CHOOSE_PHOTO: //选择相册
+                if(data != null){
+                    imageUri = data.getData();
+
+                    Log.d("12相册图片的路径", data.getData().getPath()); //图片路径
+                    Log.d("文件的绝对储存位置", mContext.getExternalCacheDir().getAbsolutePath());
+                    Log.d("文件的储存位置getPath", mContext.getExternalCacheDir().getPath());
+                    Log.d("文件的储存位置getParent", mContext.getExternalCacheDir().getParent());
+
+                    Bitmap bitmap = null;
+                    try {
+                        bitmap = BitmapFactory.decodeStream(mContext.getContentResolver().openInputStream(imageUri));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    uploadImg.setImageBitmap(bitmap);
+
+
+//                    File saveCompressImgName = null;
+//                    try {
+//                        bitmap = revitionImageSize(data.getData());
+//                        saveCompressImgName = saveBitmapFile(bitmap);
+//                        Log.d("保存到SD", saveCompressImgName.getPath());
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+
+                }
+                break;
             default:
                 Log.d("没有走进拍照", "onActivityResult: ");
                 break;
         }
     }
+
+
+    /**
+     * @param path
+     * @return
+     * @throws IOException
+     * 压缩图片
+     */
+    public static Bitmap revitionImageSize(String path) throws IOException {
+        //根据文件路径,创建一个字节缓冲输入流
+        BufferedInputStream in = new BufferedInputStream(new FileInputStream(new File(path)));
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        //根据流返回一个位图也就是bitmap，当options.inJustDecodeBounds = true的时候不需要完全解码，
+        // 它仅仅会把它的宽，高取回来给你，这样就不会占用太多的内存，也就不会那么频繁的发生OOM了
+        BitmapFactory.decodeStream(in, null, options);
+        //关闭流
+        in.close();
+        int i = 0;
+        Bitmap bitmap = null;
+        while (true) {
+            // options.outWidth >> i 。右移运算符，num >> 1,相当于num除以2
+            if ((options.outWidth >> i <= 1000) && (options.outHeight >> i <= 1000)) {
+                //得到一个输入流
+                in = new BufferedInputStream(new FileInputStream(new File(path)));
+                //为了解决图片解码时候出现SanpleSize错误，设置恰当的inSampleSize可以使BitmapFactory分配更少的空间以消除该错误
+                //你将 inSampleSize 赋值为2,那就是每隔2行采1行,每隔2列采一列,那你解析出的图片就是原图大小的1/4.
+                // Math.pow(2.0D, i)次方运算，2的i次方是多少
+                options.inSampleSize = (int) Math.pow(2.0D, i);
+                // 这里之前设置为了true，所以要改为false，否则就创建不出图片
+                options.inJustDecodeBounds = false;
+                bitmap = BitmapFactory.decodeStream(in, null, options);
+                break;
+            }
+            i += 1;
+        }
+        return bitmap;
+    }
+
+
+    /**
+     * @param bitmap
+     * 保存图片到SD卡的方法
+     */
+    private static File saveBitmapFile(Bitmap bitmap){
+        //Environment.getExternalStorageDirectory() 获取Android外部存储的空间，当有外部SD卡就在外部SD卡上建立。
+        //没有外部SD卡就在内部SD卡的非data/data/目录建立目录。（data/data/目录才是真正的内存目录。）
+        //IMAGE_NAME文件的名字，随便起。比如（xxx.jpg）
+        String saveBitmapImgName = randomStr();
+        File tempFile = new File(Environment.getExternalStorageDirectory(), saveBitmapImgName +".jpg" );
+
+        try {
+            //创建一个输出流，将数据写入到创建的文件对象中。
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(tempFile));
+            ////30 是压缩率，表示压缩70%; 如果不压缩是100，
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+           /* 为什么要调用flush()方法？当FileOutputStream作为BufferedOutputStream构造函数的参数传入，然后对BufferedOutputStream进行写入操作，才能利用缓冲及flush()。
+            查看BufferedOutputStream的源代码，发现所谓的buffer其实就是一个byte[]。
+            BufferedOutputStream的每一次write其实是将内容写入byte[]，当buffer容量到达上限时，会触发真正的磁盘写入。
+            而另一种触发磁盘写入的办法就是调用flush()了。*/
+            bos.flush();
+            //关闭流对象
+            bos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return tempFile;
+    }
+
+
+    private static String randomStr(){
+        String strRand="" ;
+        for(int i=0;i<20;i++){
+            strRand += String.valueOf((int)(Math.random() * 10)) ;
+        }
+        return  strRand;
+    }
+
 }
