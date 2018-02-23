@@ -32,8 +32,8 @@ import java.util.Date;
 public class Upload2QiNiu {
 
     private static final String TAG = "Upload2QiNiu";
-    
-    public static void singleUpload2qiniu(Bitmap imgPath){
+
+    public static void singleUpload2qiniu(Bitmap imgPath) {
 
         Configuration config = new Configuration.Builder()
                 .chunkSize(256 * 1024)  //分片上传时，每片的大小。 默认 256K
@@ -46,9 +46,9 @@ public class Upload2QiNiu {
         UploadManager uploadManager = new UploadManager(config);
         //设置图片名字
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-        String key = "icon_" + sdf.format(new Date()) ;
+        String key = "icon_" + sdf.format(new Date()) + "_" + RandomNum();
         Bitmap picPath = imgPath;
-        
+
         Log.i(TAG, "picPath: " + picPath);
 
         uploadManager.put(Bitmap2Bytes(picPath), key, Auth.create("ugfiU6nWyHTqI2DMYECl0bmPKgR6Kg98FrdVHVqx", "9LN1RvkAiw9SPM34k6SvGNnGn1ulxhrhhYJ4lcoh").uploadToken("photo"), new UpCompletionHandler() {
@@ -56,27 +56,54 @@ public class Upload2QiNiu {
             public void complete(String key, ResponseInfo info, JSONObject response) {
 
                 Log.d("开始上传前", "complete: ");
-                if(info.isOK()){
+                if (info.isOK()) {
                     Log.i(TAG, "token===" + Auth.create("ugfiU6nWyHTqI2DMYECl0bmPKgR6Kg98FrdVHVqx", "9LN1RvkAiw9SPM34k6SvGNnGn1ulxhrhhYJ4lcoh").uploadToken("photo"));
                     String headpicPath = "http://oukftd5d3.bkt.clouddn.com/" + key;
                     Log.i("图片已上传成功,路径为: ", "complete:" + headpicPath);
 
-                }else{
+                } else {
                     Log.d("失败错误原因", info.error);
                 }
 
                 //     uploadpictoQianMo(headpicPath, picPath);
             }
-        },null);
+        }, null);
     }
 
 
-    public static byte[] Bitmap2Bytes(Bitmap bm) {
+    /**
+     * 将图片 bitmap 格式转成 byte
+     *
+     * @param bm
+     * @return
+     */
+    private static byte[] Bitmap2Bytes(Bitmap bm) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
         return baos.toByteArray();
     }
 
+
+    /**
+     * 生成12位随机数
+     * @return
+     */
+    private static int RandomNum() {
+        int randomNum = 0;
+        for (int i = 0; i <= 200; i++) {
+            int intFlag = (int) (Math.random() * 1000000);
+
+            String flag = String.valueOf(intFlag);
+            if (flag.length() == 12 && flag.substring(0, 1).equals("9")) {
+                randomNum = intFlag;
+            } else {
+                intFlag = intFlag + 100000;
+                randomNum = intFlag;
+            }
+        }
+
+        return randomNum;
+    }
 
 
 }
