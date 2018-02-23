@@ -2,12 +2,14 @@ package com.nwei.shen.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,12 +25,12 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 
 import com.nwei.R;
-import com.nwei.http.HttpCallBackLisioner;
-import com.nwei.http.HttpUtil;
-import com.nwei.http.ParseJson;
-import com.nwei.model.Qiniu;
+import com.nwei.tools.Auth;
+import com.qiniu.android.http.ResponseInfo;
+import com.qiniu.android.storage.UpCompletionHandler;
+import com.qiniu.android.storage.UploadManager;
 
-import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -37,6 +39,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -44,10 +48,10 @@ import static android.app.Activity.RESULT_OK;
  * Created by admin on 2018/2/6.
  */
 
-public class ProductIntroduceFragment extends Fragment implements View.OnClickListener{
+public class ProductIntroduceFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "ProductIntroduceFragmen";
-    
+
     View view;
     Context mContext;
     ImageView uploadImg;
@@ -66,7 +70,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContext = getActivity();
-        view = inflater.inflate(R.layout.fragment_product_introduce,container,false);
+        view = inflater.inflate(R.layout.fragment_product_introduce, container, false);
 
         return view;
     }
@@ -79,29 +83,38 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
         takePhotoBtn = view.findViewById(R.id.takePhotoBtn);
         confirmUploadBtn = view.findViewById(R.id.confirmUploadBtn);
 
-        //请求 api 获取七牛token
         confirmUploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HttpUtil.getRequest("qiniu-token", new HttpCallBackLisioner() {
-                    @Override
-                    public void onFinish(String requestString) {
-                        try {
-                            Qiniu qiniu = ParseJson.parseJson(requestString,Qiniu.class);
-                            Log.d("qiniu", qiniu.getMessage());
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
 
+                UploadManager uploadManager = new UploadManager();
+                //设置图片名字
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+                String key = "icon_" + sdf.format(new Date());
+
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(mContext);
+                String uploadImgPath = pref.getString("uploadImgPath", null);
+                Log.d("我是path", uploadImgPath);
+
+                String picPath = uploadImgPath;
+                Log.i(TAG, "picPath: " + picPath);
+
+                uploadManager.put(picPath, key, Auth.create("ugfiU6nWyHTqI2DMYECl0bmPKgR6Kg98FrdVHVqx", "9LN1RvkAiw9SPM34k6SvGNnGn1ulxhrhhYJ4lcoh").uploadToken("photo"), new UpCompletionHandler() {
                     @Override
-                    public void onError(Exception e) {
-                        e.printStackTrace();
+                    public void complete(String key, ResponseInfo info, JSONObject response) {
+                        if(info.isOK()){
+                            Log.d(TAG, "token="+ Auth.create("ugfiU6nWyHTqI2DMYECl0bmPKgR6Kg98FrdVHVqx", "9LN1RvkAiw9SPM34k6SvGNnGn1ulxhrhhYJ4lcoh").uploadToken("photo"));
+                            String headpicPath = "http://oukftd5d3.bkt.clouddn.com/"+key;
+                            Log.d(TAG, "complete" + headpicPath);
+                        }
+
+//                         uploadpictoQianMo(headpicPath, picPath);
+
                     }
-                },"$2y$10$3xSZ8FdEBI95btXkj2dwLOkAfo8soTvqfv1c4bRgwHdyxJgSN76Ou");
+                },null);
+
             }
         });
-
 
         takePhotoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,22 +125,21 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
         });
 
 
-
-
     }
 
 
     @Override
     public void onClick(View v) {
-        switch (getId()){
+        switch (getId()) {
+
             default:
                 break;
         }
     }
 
-    private void popupWindow(){
-        View popupView = LayoutInflater.from(mContext).inflate(R.layout.popup3_window,null,false);
-
+    private void popupWindow() {
+        //
+        View popupView = LayoutInflater.from(mContext).inflate(R.layout.popup3_window, null, false);
 
         bt_album = popupView.findViewById(R.id.btn_pop_album);
         bt_camera = popupView.findViewById(R.id.btn_pop_camera);
@@ -135,8 +147,8 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
 
         //获取屏幕宽高
         int weight = getResources().getDisplayMetrics().widthPixels;
-        int height = getResources().getDisplayMetrics().heightPixels*1/3;
-        final PopupWindow window = new PopupWindow(popupView,weight,height,false);
+        int height = getResources().getDisplayMetrics().heightPixels * 1 / 3;
+        final PopupWindow window = new PopupWindow(popupView, weight, height, false);
         window.setOutsideTouchable(true);
         window.setTouchable(true);
 
@@ -179,18 +191,18 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
         WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
         lp.alpha = 0.5f;    //更改窗口透明度
         getActivity().getWindow().setAttributes(lp);
-        window.showAtLocation(popupView, Gravity.BOTTOM,0,50);
+        window.showAtLocation(popupView, Gravity.BOTTOM, 0, 50);
     }
 
 
     /**
      * 打开相机拍照
      */
-    private void openCamera(){
+    private void openCamera() {
         //getExternalCacheDir() 获取应用关联缓存目录
-        File outputImage = new File(mContext.getExternalCacheDir(),"output_image.jpg");
+        File outputImage = new File(mContext.getExternalCacheDir(), "output_image.jpg");
         try {
-            if(outputImage.exists()){
+            if (outputImage.exists()) {
                 outputImage.delete();
             }
             outputImage.createNewFile();
@@ -199,16 +211,16 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
             e.printStackTrace();
         }
 
-        if(Build.VERSION.SDK_INT >= 24){
-            imageUri = FileProvider.getUriForFile(mContext,"com.take.image",outputImage);
-        }else{
+        if (Build.VERSION.SDK_INT >= 24) {
+            imageUri = FileProvider.getUriForFile(mContext, "com.take.image", outputImage);
+        } else {
             imageUri = Uri.fromFile(outputImage);
         }
 
         //启动相机
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
-        startActivityForResult(intent,TAKE_PHOTO);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+        startActivityForResult(intent, TAKE_PHOTO);
 
     }
 
@@ -216,11 +228,11 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
     @Override
     public void onActivityResult(final int requestCode, int resultCode, final Intent data) {
 
-        switch (requestCode){
+        switch (requestCode) {
             case TAKE_PHOTO:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     try {
-                        Log.d("拍照相机", imageUri+"");
+                        Log.d("拍照相机", imageUri + "");
                         //将拍摄的照片显示出来
                         Bitmap bitmap = BitmapFactory.decodeStream(mContext.getContentResolver().openInputStream(imageUri));
                         Log.d("图片bitmap", bitmap.toString());
@@ -231,7 +243,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
                 }
                 break;
             case CHOOSE_PHOTO: //选择相册
-                if(data != null){
+                if (data != null) {
                     imageUri = data.getData();
 
                     Log.d("12相册图片的路径", data.getData().getPath()); //图片路径
@@ -247,6 +259,11 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
                     }
                     uploadImg.setImageBitmap(bitmap);
 
+                    //将需要上传的图片的写到缓存中
+                    SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(mContext).edit();
+                    editor.putString("uploadImgPath", data.getData().getPath());
+                    editor.apply();
+
 
 //                    File saveCompressImgName = null;
 //                    try {
@@ -260,7 +277,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
                 }
                 break;
             default:
-                Log.d("没有走进拍照", "onActivityResult: ");
+                Log.d("没有走进拍照", "onActivityResult:");
                 break;
         }
     }
@@ -269,8 +286,7 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
     /**
      * @param path
      * @return
-     * @throws IOException
-     * 压缩图片
+     * @throws IOException 压缩图片
      */
     public static Bitmap revitionImageSize(String path) throws IOException {
         //根据文件路径,创建一个字节缓冲输入流
@@ -305,15 +321,14 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
 
 
     /**
-     * @param bitmap
-     * 保存图片到SD卡的方法
+     * @param bitmap 保存图片到SD卡的方法
      */
-    private static File saveBitmapFile(Bitmap bitmap){
+    private static File saveBitmapFile(Bitmap bitmap) {
         //Environment.getExternalStorageDirectory() 获取Android外部存储的空间，当有外部SD卡就在外部SD卡上建立。
         //没有外部SD卡就在内部SD卡的非data/data/目录建立目录。（data/data/目录才是真正的内存目录。）
         //IMAGE_NAME文件的名字，随便起。比如（xxx.jpg）
         String saveBitmapImgName = randomStr();
-        File tempFile = new File(Environment.getExternalStorageDirectory(), saveBitmapImgName +".jpg" );
+        File tempFile = new File(Environment.getExternalStorageDirectory(), saveBitmapImgName + ".jpg");
 
         try {
             //创建一个输出流，将数据写入到创建的文件对象中。
@@ -335,12 +350,12 @@ public class ProductIntroduceFragment extends Fragment implements View.OnClickLi
     }
 
 
-    private static String randomStr(){
-        String strRand="" ;
-        for(int i=0;i<20;i++){
-            strRand += String.valueOf((int)(Math.random() * 10)) ;
+    private static String randomStr() {
+        String strRand = "";
+        for (int i = 0; i < 20; i++) {
+            strRand += String.valueOf((int) (Math.random() * 10));
         }
-        return  strRand;
+        return strRand;
     }
 
 }
