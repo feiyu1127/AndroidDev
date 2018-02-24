@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.nwei.qiniuupload"
-        minSdkVersion 19
+        minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -30,5 +30,7 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.google.code.gson:gson:2.8.2'
     compile 'com.qiniu:qiniu-android-sdk:7.3.+' //安卓上传七牛依赖
+
+    compile 'com.soundcloud.android:android-crop:1.0.1@aar' //图片裁剪
 
 }

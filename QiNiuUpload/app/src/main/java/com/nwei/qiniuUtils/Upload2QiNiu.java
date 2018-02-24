@@ -1,19 +1,9 @@
 package com.nwei.qiniuUtils;
 
-import android.content.ContentResolver;
-import android.content.ContentUris;
-import android.content.Context;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.support.v4.content.CursorLoader;
 import android.util.Log;
 
 import com.qiniu.android.common.FixedZone;
-import com.qiniu.android.common.Zone;
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.Configuration;
 import com.qiniu.android.storage.UpCompletionHandler;
@@ -33,7 +23,9 @@ public class Upload2QiNiu {
 
     private static final String TAG = "Upload2QiNiu";
 
-    public static void singleUpload2qiniu(Bitmap imgPath) {
+    private static boolean qiniuUploadFlag = false;
+
+    public static boolean singleUpload2qiniu(Bitmap imgPath) {
 
         Configuration config = new Configuration.Builder()
                 .chunkSize(256 * 1024)  //分片上传时，每片的大小。 默认 256K
@@ -46,7 +38,7 @@ public class Upload2QiNiu {
         UploadManager uploadManager = new UploadManager(config);
         //设置图片名字
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-        String key = "icon_" + sdf.format(new Date()) + "_" + RandomNum();
+        String key = "android/" + sdf.format(new Date()) + "_" + RandomNum() + ".jpg";
         Bitmap picPath = imgPath;
 
         Log.i(TAG, "picPath: " + picPath);
@@ -55,19 +47,20 @@ public class Upload2QiNiu {
             @Override
             public void complete(String key, ResponseInfo info, JSONObject response) {
 
-                Log.d("开始上传前", "complete: ");
                 if (info.isOK()) {
-                    Log.i(TAG, "token===" + Auth.create("ugfiU6nWyHTqI2DMYECl0bmPKgR6Kg98FrdVHVqx", "9LN1RvkAiw9SPM34k6SvGNnGn1ulxhrhhYJ4lcoh").uploadToken("photo"));
                     String headpicPath = "http://oukftd5d3.bkt.clouddn.com/" + key;
                     Log.i("图片已上传成功,路径为: ", "complete:" + headpicPath);
 
+                    qiniuUploadFlag = true; //图片上传成功返回 true
                 } else {
                     Log.d("失败错误原因", info.error);
                 }
 
-                //     uploadpictoQianMo(headpicPath, picPath);
             }
+
         }, null);
+
+        return qiniuUploadFlag;
     }
 
 
@@ -85,7 +78,8 @@ public class Upload2QiNiu {
 
 
     /**
-     * 生成12位随机数
+     * 生成6位随机数
+     *
      * @return
      */
     private static int RandomNum() {

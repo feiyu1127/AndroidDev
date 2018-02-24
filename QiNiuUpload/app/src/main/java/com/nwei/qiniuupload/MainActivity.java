@@ -3,17 +3,16 @@ package com.nwei.qiniuupload;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
-import android.preference.PreferenceManager;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,8 +21,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.nwei.qiniuUtils.Upload2QiNiu;
+import com.soundcloud.android.crop.Crop;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,21 +59,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         upload2QNBtn = findViewById(R.id.upload2QNBtn);
 
         selectPicBtn.setOnClickListener(this);
-
+        upload2QNBtn.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.selectPicBtn:
+            case R.id.selectPicBtn: //选择图片按钮
                 popupWindow();
+                break;
+            case R.id.upload2QNBtn:
+                new Thread(new Runnable() { //点击上传按钮,上传图片到七牛服务器
+                    @Override
+                    public void run() {
+                        Bitmap bitmap = ((BitmapDrawable) (uploadImg).getDrawable()).getBitmap(); //强行从 从imageview中获得bitmap
+                        boolean qiniuUploadRes = Upload2QiNiu.singleUpload2qiniu(bitmap); //上传图片到七牛
+                        if(qiniuUploadRes == true){
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(mContext,"上传成功",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }else{
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(mContext,"上传失败",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                    }
+                }).start();
                 break;
             default:
                 break;
         }
     }
 
+
+    /**
+     * popup 弹窗
+     */
     private void popupWindow() {
         View popupView = LayoutInflater.from(mContext).inflate(R.layout.popup3_window, null, false);
 
@@ -148,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (Build.VERSION.SDK_INT >= 24) {
-            imageUri = FileProvider.getUriForFile(mContext, "com.take.image", outputImage);
+            imageUri = FileProvider.getUriForFile(mContext, "com.qiniu.upload.take.image", outputImage);
         } else {
             imageUri = Uri.fromFile(outputImage);
         }
@@ -164,8 +193,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case CHOOSE_PHOTO:
+            case CHOOSE_PHOTO: //相册选择
                 if (data != null) {
+
                     imageUri = data.getData();
                     Bitmap bitmap = null;
                     try {
@@ -178,13 +208,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d("图片相对路径路径", data.getData().getPath());
 
                     uploadImg.setImageBitmap(bitmap);
-                    Upload2QiNiu.singleUpload2qiniu(bitmap);
-//                    Upload2QiNiu.singleUpload2qiniu(getFilePathFromContentUri(imageUri,mContext.getContentResolver()));
+
+                    //选择图片成功后显示上传按钮
+                    upload2QNBtn.setVisibility(View.VISIBLE);
+
+                    //上传图片到七牛
+//                    Upload2QiNiu.singleUpload2qiniu(bitmap);
+//                  Uploa
+// d2QiNiu.singleUpload2qiniu(getFilePathFromContentUri(imageUri,mContext.getContentResolver()));
 
                 }
                 break;
+            case TAKE_PHOTO: //相机拍照
+                if(resultCode == RESULT_OK){
+                    try {
+                        //将拍摄的图片显示出来
+                        Bitmap bitmap = BitmapFactory.decodeStream(mContext.getContentResolver().openInputStream(imageUri));
+                        uploadImg.setImageBitmap(bitmap);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
             default:
                 break;
+        }
+    }
+
+
+    // 开始裁剪
+    private void beginCrop(Uri source) {
+        Uri destination = Uri.fromFile(new File(getCacheDir(), "cropped"));
+        Crop.of(source, destination).asSquare().start(this);
+    }
+
+
+    // 将裁剪回来的数据进行处理
+    private void handleCrop(int resultCode, Intent result) {
+        if (resultCode == RESULT_OK) {
+            uploadImg.setImageURI(Crop.getOutput(result));
+        } else if (resultCode == Crop.RESULT_ERROR) {
+            Toast.makeText(this, Crop.getError(result).getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
