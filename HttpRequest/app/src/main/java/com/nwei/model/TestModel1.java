@@ -1,5 +1,6 @@
 package com.nwei.model;
 
+import com.google.gson.annotations.SerializedName;
 import com.nwei.model.entity.Test1;
 
 /**
@@ -7,6 +8,7 @@ import com.nwei.model.entity.Test1;
  */
 
 public class TestModel1 extends BaseModel {
+    @SerializedName("data")
     private Test1 test1Data;
 
     public Test1 getTest1Data() {

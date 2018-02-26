@@ -9,9 +9,10 @@
         android:topLeftRadius="5dp"
         android:topRightRadius="5dp" />
     <!-- Button里面的文字与Button边界的间隔-->
+
     <padding
         android:left="15dp"
         android:right="15dp"
         />
-    <solid android:color="#45d0df" />
+    <solid android:color="#eaeaea" />
 </shape>

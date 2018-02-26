@@ -1,5 +1,7 @@
 package com.nwei.model.entity;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by admin on 2018/2/24.
  */
@@ -10,7 +12,7 @@ public class Test1 {
     private String name;
     private String manu_name;
 
-    private ApiVal apiVal;
+    private ApiVal api_val;
 
     public int getId() {
         return id;
@@ -44,11 +46,11 @@ public class Test1 {
         this.manu_name = manu_name;
     }
 
-    public ApiVal getApiVal() {
-        return apiVal;
+    public ApiVal getApi_val() {
+        return api_val;
     }
 
-    public void setApiVal(ApiVal apiVal) {
-        this.apiVal = apiVal;
+    public void setApi_val(ApiVal api_val) {
+        this.api_val = api_val;
     }
 }

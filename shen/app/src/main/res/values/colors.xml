@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="white">#FFFFFF</color> <!--白色 -->
     <color name="ivory">#FFFFF0</color> <!--象牙色 -->
     <color name="lightyellow">#FFFFE0</color> <!--亮黄色 -->
@@ -80,9 +81,8 @@
     <color name="lightsteelblue">#B0C4DE</color> <!--亮钢兰色-->
     <color name="paleturquoise">#AFEEEE</color> <!--苍宝石绿 -->
     <color name="greenyellow">#ADFF2F</color> <!--黄绿色 -->
-    <color name="lightblue">#ADD8E6</color> <!--亮蓝色 -->
+    <color name="lightblue">#69C3CD</color> <!--亮蓝色 -->
     <color name="darkgray">#A9A9A9</color> <!--暗灰色 -->
-    <color name="darkgrey">#A9A9A9</color> <!--暗灰色 -->
     <color name="brown">#A52A2A</color> <!--褐色 -->
     <color name="sienna">#A0522D</color> <!--赭色 -->
     <color name="darkorchid">#9932CC</color> <!--暗紫色 -->

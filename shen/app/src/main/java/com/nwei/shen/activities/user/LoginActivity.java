@@ -3,18 +3,17 @@ package com.nwei.shen.activities.user;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nwei.R;
-import com.nwei.entity.UserEntity;
 import com.nwei.http.HttpCallBackLisioner;
 import com.nwei.http.HttpUtil;
 import com.nwei.http.ParseJson;
+import com.nwei.model.entity.UserEntity;
+import com.nwei.shen.activities.BaseActivity;
 import com.nwei.shen.activities.main.MainActivity;
 
 import org.json.JSONException;
@@ -23,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     Context mContext = this;
     EditText loginRequestPhone;
@@ -53,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String loginRequestPhoneStr = loginRequestPhone.getText().toString();
                 String loginRequestPasswordStr = loginRequestPassword.getText().toString();
                 if(loginRequestPhoneStr == null || loginRequestPhoneStr.length() <= 0 || loginRequestPasswordStr == null || loginRequestPasswordStr.length() <= 0){
-                    customToast(mContext,"手机号或密码不能为空");
+                    customUIToast(mContext,"手机号或密码不能为空");
                 }
 
                //发起请求
@@ -67,7 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         try {
                             UserEntity userEntity = ParseJson.parseJson(requestString,UserEntity.class);
                             if("0".equals(userEntity.getCode())){
-                                customToast(mContext,userEntity.getMessage());
+                                customUIToast(mContext,userEntity.getMessage());
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -106,8 +105,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    private void customToast(Context mContext,String msg){
-        Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show();
-    }
 
 }

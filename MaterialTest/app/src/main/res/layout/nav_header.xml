@@ -4,34 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="180dp"
     android:padding="10dp"
-    android:background="?attr/colorPrimary"
+    android:background="@color/blue_light"
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/icon_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/my_icon"
+        android:src="@drawable/nav_icon"
         android:layout_centerInParent="true"
         />
-
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:textColor="#fff"
-        android:textSize="14sp"
-        />
-
     <TextView
         android:id="@+id/mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/username"
-        android:text="西安维客"
+        android:layout_alignParentBottom="true"
+        android:text="15209272743@163.com"
         android:textColor="#fff"
         android:textSize="14sp"
         />
-
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mail"
+        android:text="Narcissus"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        />
 </RelativeLayout>

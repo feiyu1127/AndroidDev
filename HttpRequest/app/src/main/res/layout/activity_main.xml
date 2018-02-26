@@ -7,10 +7,11 @@
     android:layout_height="match_parent"
     tools:context="com.nwei.httprequest.MainActivity">
 
-    <Button
+    <com.nwei.components.CustomButton
         android:id="@+id/send_request"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="发送请求"
         />
 

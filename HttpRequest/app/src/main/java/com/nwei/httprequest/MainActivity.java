@@ -37,13 +37,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onFinish(String requestString) {
                         try {
+
+                            Log.d("请求requestString", requestString);
+
                             TestModel1 testModel1 = ParseJson.parseJson(requestString,TestModel1.class);
+
+                            Log.d("message 信息打印", testModel1.getMessage());
+                            Log.d(TAG, String.valueOf(testModel1.getCode()));
+
                             Test1 test1 = testModel1.getTest1Data();
+
+                            Log.d(TAG, test1.getCode());
 
 //                            ApiVal apiVal = test1.getApiVal();
 //                            Log.d(TAG, apiVal.getNote());
-
-                            Log.d(TAG, test1.getName());
 
                         } catch (JSONException e) {
                             e.printStackTrace();

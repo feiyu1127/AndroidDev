@@ -2,6 +2,8 @@ package com.nwei.utils;
 
 import android.support.annotation.Nullable;
 
+import com.nwei.config.Config;
+
 import java.io.IOException;
 import java.util.Map;
 
@@ -13,7 +15,7 @@ import okhttp3.Response;
 
 
 public class HttpUtil {
-    private static String HOST = "https://chufang-api.victtech.com/api/v1/";
+    private static String HOST = new Config().getApiHost();
     public static void getRequest(final String address, final HttpCallBackLisioner callBackLisioner, @Nullable final String token){
         new Thread(new Runnable() {
             @Override
