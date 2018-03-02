@@ -2,6 +2,8 @@ package com.nwei.http;
 
 import android.support.annotation.Nullable;
 
+import com.nwei.config.Config;
+
 import java.io.IOException;
 import java.util.Map;
 
@@ -17,7 +19,7 @@ import okhttp3.Response;
 
 public class HttpUtil {
 
-    private static String HOST = "https://chufang-api.victtech.com/api/v1/";
+    private static String HOST = new Config().getHOST();
 
     /**
      * get 请求
@@ -55,6 +57,7 @@ public class HttpUtil {
             public void run() {
                 Request.Builder builder = new Request.Builder().url(getAddress(address));
                 if(token != null){ // 添加头信息
+                    builder.addHeader("device","mobile");
                     builder.addHeader("token",token);
                 }
 

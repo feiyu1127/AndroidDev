@@ -5,12 +5,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <!-- 读取SDK 权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".shen.activities.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,27 +20,25 @@
         <activity android:name=".shen.activities.user.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".shen.MainActivity" />
         <activity android:name=".shen.activities.user.RegisterActivity" />
-        <activity android:name=".shen.activities.main.MainActivity">
-
-        </activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.take.image"
             android:exported="false"
-            android:grantUriPermissions="true"
-            >
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"
-                />
+                android:resource="@xml/file_paths" />
         </provider>
 
+        <activity android:name=".shen.activities.main.MainActivity" />
+        <activity android:name=".shen.activities.main.ProfileActivity"></activity>
     </application>
 
 </manifest>

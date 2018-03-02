@@ -14,5 +14,5 @@
         android:left="10dp"
         android:right="10dp"
         android:top="10dp" />
-    <solid android:color="@color/red" />
+    <solid android:color="@color/default_gray" />
 </shape>

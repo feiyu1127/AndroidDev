@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         mContext = this;
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("重新设置标题");
         setSupportActionBar(toolbar);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);

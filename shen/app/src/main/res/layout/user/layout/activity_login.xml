@@ -50,6 +50,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:maxLength="11"
+                android:inputType="number"
+                android:text="15209272743"
                 android:textCursorDrawable="@drawable/color_cursor"
                 android:theme="@style/MyEditText"
                 />
@@ -75,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="123456"
                 android:textCursorDrawable="@drawable/color_cursor"
                 android:theme="@style/MyEditText"
                 android:inputType="textPassword"
@@ -89,12 +93,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             >
-            <Button
+            <com.nwei.component.CustomButton
                 android:id="@+id/login_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_shape"
-                android:textColor="#fff"
+                android:enabled="true"
                 android:text="登&#160;&#160;录"
                 />
         </LinearLayout>
@@ -125,21 +128,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="忘记密码"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/quick_register_block"
-            android:layout_marginTop="10dp"
-            android:gravity="left"
-            >
-            <TextView
-                android:id="@+id/login_to_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="进入首页"
                 />
         </LinearLayout>
 

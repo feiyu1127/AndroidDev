@@ -1,22 +1,21 @@
-package com.nwei.model;
+package com.nwei.model.entity;
 
 /**
  * Created by admin on 2018/2/5.
  */
 
 public class User {
-    private int id;
-    private String phone;
-    private String avatar;
-    private String name;
-    private String sex;
-    private int status;
-    private String pc_token;
-    private String mobile_token;
-    private int role;
-    private String created_at;
-    private String updated_at;
-
+   private int id;
+   private String phone;
+   private String avatar;
+   private String name;
+   private String sex;
+   private int status;
+   private String pc_token;
+   private String mobile_token;
+   private int role;
+   private String created_at;
+   private String updated_at;
 
     public int getId() {
         return id;

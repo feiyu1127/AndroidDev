@@ -1,6 +1,6 @@
 package com.nwei.shen.activities;
 
-import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -10,18 +10,26 @@ import android.widget.Toast;
 
 public class BaseActivity extends AppCompatActivity {
 
-    protected void customUIToastThread(final Context context, final String msg){
+    private static SharedPreferences mSharedPreferences;
+
+    protected void customUIToast(final String msg){
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyApplication.getContext(),msg,Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-
-    protected void customUIToast(Context context,String msg){
-        Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
+    /**
+     * 持久化数据
+     * @param name
+     * @param msg
+     */
+    protected void saveMsgToSharedPreferences(String name,String msg){
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString(name,msg);
+        editor.apply();
     }
 
 }
