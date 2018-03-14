@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+[rev_slider home1]
+
+
+[planyo]
+
+
+
+<?php foreach ($videoPosts as $key=>$videoPost){ ?>
+                    <div class="video">
+                        <video src="<?php echo $videoPost ?>" controls="controls">
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                <?php } ?>
+                <!-- 没有上传视频时显示 -->
+                <?php if(empty($videoPosts)){ ?>
+                    <div class="video">
+                        <video src="" controls="controls">
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                <?php } ?>
+
+
+
+krown-icon-road
+krown-icon-truck
+krown-icon-award
+krown-icon-hammer
+
+
+
+
+
